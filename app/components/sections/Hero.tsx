@@ -41,8 +41,7 @@ const Hero = () => {
           onClick={toggleAudio}
         />
       )}
-      {/* <EarthCanvas className="float-right mt-12 mr-20" /> */}
-      <MoonCanvas className="float-right mt-12 mr-20" />
+      <MoonCanvas className="float-right mt-12 mr-20 hidden md:block" />
       <hgroup className="w-fit flex flex-col">
         <h1 className="text-8xl font-bold">
           Hi, I&apos;m <span className=" text-yellow-500">Phuc</span>

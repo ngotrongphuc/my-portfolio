@@ -12,16 +12,18 @@ const WorkCard = ({ name, logo, position, time, description }: Company) => {
           height={60}
           className="bg-white"
         />
-        <div className='flex-1 pl-6'>
-        <h2 className="text-xl font-bold">{position}</h2>
-        <h3 className='font-medium text-gray-300'>{name}</h3>
-        <h4 className='text-sm text-gray-300'>{time}</h4>
+        <div className="flex-1 pl-6">
+          <h2 className="text-xl font-bold">{position}</h2>
+          <h3 className="font-medium text-gray-300">{name}</h3>
+          <h4 className="text-sm text-gray-300">{time}</h4>
         </div>
       </div>
       {Array.isArray(description) ? (
-        <ul className='list-disc pl-6'>
+        <ul className="list-disc pl-6">
           {description.map((item, index) => (
-            <li key={index} className='pt-2 first:pt-6'>{item}</li>
+            <li key={index} className="pt-2 first:pt-6">
+              {item}
+            </li>
           ))}
         </ul>
       ) : (

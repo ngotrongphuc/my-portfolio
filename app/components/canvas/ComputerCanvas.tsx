@@ -36,28 +36,28 @@ const ComputerCanvas = (props: any) => {
         gl={{ preserveDrawingBuffer: true }}
       >
         <Suspense fallback={<CanvasLoader />}>
-        <Computer />
-        <OrbitControls
-        // enableZoom={false}
-        // enablePan={false}
-        // maxPolarAngle={Math.PI / 2.5}
-        // minPolarAngle={Math.PI / 2.5}
-        />
-        {/* <Environment preset="forest" /> */}
-        {/* <ambientLight intensity={10} /> */}
-        {/* <hemisphereLight intensity={1} groundColor={'black'}/> */}
-        <pointLight intensity={1} position={[5, 5, 10]} decay={0} />
-        <spotLight
-          intensity={10}
-          position={[0, 10, 0]}
-          decay={0}
-          angle={1}
-          penumbra={1}
-          castShadow
-          shadow-mapsize={1024}
-        />
+          <Computer />
+          <OrbitControls
+          // enableZoom={false}
+          // enablePan={false}
+          // maxPolarAngle={Math.PI / 2.5}
+          // minPolarAngle={Math.PI / 2.5}
+          />
+          {/* <Environment preset="forest" /> */}
+          {/* <ambientLight intensity={10} /> */}
+          {/* <hemisphereLight intensity={1} groundColor={'black'}/> */}
+          <pointLight intensity={1} position={[5, 5, 10]} decay={0} />
+          <spotLight
+            intensity={10}
+            position={[0, 10, 0]}
+            decay={0}
+            angle={1}
+            penumbra={1}
+            castShadow
+            shadow-mapsize={1024}
+          />
         </Suspense>
-        <Preload all/>
+        <Preload all />
       </Canvas>
     </div>
   );

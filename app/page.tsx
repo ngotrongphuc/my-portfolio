@@ -10,8 +10,8 @@ export default function Home() {
     <div className="min-h-screen">
       <Hero />
       <About />
-      <Work/>
-      <Contact/>
+      <Work />
+      <Contact />
       {/* <ComputerCanvas /> */}
       {/* <video id="backgroundMusic" controls autoPlay loop>
         <source src="/interstellar_theme.mp3" type="audio/mpeg" />

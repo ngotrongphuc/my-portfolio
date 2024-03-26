@@ -1,17 +1,22 @@
-import MotionDiv from "../components/MotionDiv";
+'use client';
+import { motion } from 'framer-motion';
+import useWindowDimensions from '../hooks/useWindowDimensions';
 
 const SectionWrapper = (Component: React.FunctionComponent, idName: string) =>
   function HOC() {
+    const { isSm } = useWindowDimensions();
     return (
-      <MotionDiv
-        initial='hidden'
-        whileInView='show'
-        viewport={{ once: true, amount: 0.5 }}
-        className='h-screen bg-gray-950 flex justify-center p-0'
+      <motion.div
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: isSm ? 0.1 : 0.25 }}
+        className="min-h-screen bg-gray-950"
         id={idName}
       >
-        <Component />
-      </MotionDiv>
+        <div className="flex mx-auto p-6 max-w-full md:max-w-[95%] lg:max-w-[90%] xl:max-w-[85%] 2xl:max-w-7xl">
+          <Component />
+        </div>
+      </motion.div>
     );
   };
 
