@@ -8,6 +8,8 @@ import { Transition } from '@headlessui/react';
 import ElevatedButton from '../ElevatedButton';
 import MoonCanvas from '../canvas/MoonCanvas';
 import ScrollButton from '../ScrollButton';
+import styles from '@/app/ui/styles';
+import { heroSubText, heroTaglineText } from '@/app/utils/constants';
 
 const Hero = () => {
   const backgroundAudioRef = useRef<HTMLAudioElement>(null);
@@ -43,14 +45,12 @@ const Hero = () => {
       )}
       <MoonCanvas className="float-right mt-12 mr-20 hidden md:block" />
       <hgroup className="w-fit flex flex-col">
-        <h1 className="text-8xl font-bold">
+        <h1 className={`${styles.heroHeadText}`}>
           Hi, I&apos;m <span className=" text-yellow-500">Phuc</span>
         </h1>
-        <h2 className="text-5xl font-medium">Front-end developer</h2>
-        <p className=" text-4xl mt-4 leading-snug">
-          I like to craft solid and scalable frontend
-          <br />
-          products with great user experiences.
+        <h2 className={`${styles.heroSubText}`}>{heroSubText}</h2>
+        <p className={`${styles.heroTaglineText} max-w-[600px]`}>
+          {heroTaglineText}
         </p>
         <ElevatedButton className="self-center mt-20">
           Contact me

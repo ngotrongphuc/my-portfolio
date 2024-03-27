@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { poppins } from '@/app/ui/fonts';
 import './globals.css';
 import Navbar from './components/Navbar';
-import Navbar2 from './components/Navbar2';
 
 export const metadata: Metadata = {
   title: {
@@ -21,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${poppins.className} antialiased`}>
-        <Navbar2 />
+        <Navbar />
         {children}
       </body>
     </html>

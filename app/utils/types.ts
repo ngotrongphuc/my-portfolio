@@ -1,3 +1,8 @@
+export type NavbarItem = {
+  name: string;
+  href: string;
+};
+
 export type Skill = {
   title: string;
   icon: string;

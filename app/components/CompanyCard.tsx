@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { Company } from '../utils/types';
+import TextWithLink from './TextWithLink';
 
 const WorkCard = ({ name, logo, position, time, description }: Company) => {
   return (
@@ -22,12 +23,16 @@ const WorkCard = ({ name, logo, position, time, description }: Company) => {
         <ul className="list-disc pl-6">
           {description.map((item, index) => (
             <li key={index} className="pt-2 first:pt-6">
-              {item}
+              <TextWithLink>{item}</TextWithLink>
             </li>
           ))}
         </ul>
       ) : (
-        <p>{description}</p>
+        <ul className="list-disc pl-6">
+          <li className="pt-2 first:pt-6">
+            <TextWithLink>{description}</TextWithLink>
+          </li>
+        </ul>
       )}
     </div>
   );

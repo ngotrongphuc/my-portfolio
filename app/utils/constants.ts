@@ -1,8 +1,14 @@
-import { Company, Skill } from './types';
+import { Company, NavbarItem, Skill } from './types';
 
-const styles = {
-  testBackground: 'bg-[#441999]',
-};
+const navbarItems: NavbarItem[] = [
+  { name: 'About', href: '#about' },
+  { name: 'Work', href: '#work' },
+  { name: 'Contact', href: '#contact' },
+];
+
+const heroHeadText = '';
+const heroSubText = 'Front-end developer';
+const heroTaglineText = `I like to craft solid and scalable frontend products with great user experiences.`;
 
 const skills: Skill[] = [
   {
@@ -48,6 +54,8 @@ const skills: Skill[] = [
 const introduction =
   "I'm a skilled software developer with experience in TypeScript and JavaScript, and expertise in frameworks like React, Node.js, and Three.js. I'm a quick learner and collaborate closely with clients to create efficient, scalable, and user-friendly solutions that solve real-world problems. Let's work together to bring your ideas to life!";
 
+const workExperience = '';
+
 const companies: Company[] = [
   {
     name: 'Zigvy Corporation',
@@ -55,10 +63,11 @@ const companies: Company[] = [
     position: 'Front-end developer',
     time: '9/2021 - 9/2022',
     description: [
-      'Developing and maintaining web applications using React.js and other related technologies.',
+      'Developing and maintaining resource management web application using React.js and other related technologies.',
       'Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.',
       'Implementing responsive design and ensuring cross-browser compatibility',
       'Participating in code reviews and providing constructive feedback to other developers.',
+      'Website: https://www.hrforte.com/hr-octopro/',
     ],
   },
   {
@@ -67,12 +76,21 @@ const companies: Company[] = [
     position: 'Front-end developer',
     time: '12/2022 - 8/2023',
     description: [
-      'Developing and maintaining web applications using React.js and other related technologies.',
+      'Developing POS software for Japanese businesses using Vuejs and Electronjs and other related technologies.',
       'Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.',
       'Implementing responsive design and ensuring cross-browser compatibility',
-      'Participating in code reviews and providing constructive feedback to other developers.',
+      'Participating in improving and optimizing product performance',
     ],
   },
 ];
 
-export { styles, skills, introduction, companies };
+export {
+  navbarItems,
+  heroHeadText,
+  heroSubText,
+  heroTaglineText,
+  skills,
+  introduction,
+  workExperience,
+  companies,
+};

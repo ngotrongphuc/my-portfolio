@@ -34,16 +34,20 @@ function getWindowDimensions() {
 }
 
 export default function useWindowDimensions() {
-  // the will first run on server and thus doesn't have window object
-  const [windowDimensions, setWindowDimensions] = useState({
-    width: 0,
-    height: 0,
-    isSm: false,
-    isMd: false,
-    isLg: false,
-    isXl: false,
-    is2Xl: false,
-  });
+  // this will first run on server and thus doesn't have window object
+  const [windowDimensions, setWindowDimensions] = useState(
+    typeof window === 'undefined'
+      ? {
+          width: 0,
+          height: 0,
+          isSm: false,
+          isMd: false,
+          isLg: false,
+          isXl: false,
+          is2Xl: false,
+        }
+      : getWindowDimensions(),
+  );
 
   useEffect(() => {
     function handleResize() {
