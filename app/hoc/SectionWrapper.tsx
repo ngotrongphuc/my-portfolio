@@ -14,7 +14,7 @@ const SectionWrapper = (Component: React.FunctionComponent, idName: string) =>
         className="min-h-screen bg-gray-950"
         id={idName}
       >
-        <div className="flex mx-auto p-6 max-w-full md:max-w-[95%] lg:max-w-[90%] xl:max-w-[85%] 2xl:max-w-7xl">
+        <div className="flex mx-auto p-4 xs:p-6 max-w-full md:max-w-[95%] lg:max-w-[90%] xl:max-w-[85%] 2xl:max-w-7xl">
           <Component />
         </div>
       </motion.div>

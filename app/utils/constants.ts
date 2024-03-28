@@ -1,9 +1,9 @@
 import { Company, NavbarItem, Skill } from './types';
 
 const navbarItems: NavbarItem[] = [
-  { name: 'About', href: '#about' },
-  { name: 'Work', href: '#work' },
-  { name: 'Contact', href: '#contact' },
+  { name: 'About', href: '/#about' },
+  { name: 'Work', href: '/#work' },
+  { name: 'Contact', href: '/#contact' },
 ];
 
 const heroHeadText = '';

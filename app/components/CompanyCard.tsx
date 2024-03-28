@@ -4,7 +4,7 @@ import TextWithLink from './TextWithLink';
 
 const WorkCard = ({ name, logo, position, time, description }: Company) => {
   return (
-    <div className="w-[450px] h-[450px] bg-gray-900 rounded-3xl p-6">
+    <div className="w-full xs:w-[450px] bg-gray-900 rounded-3xl p-6">
       <div className="flex">
         <Image
           src={`/companies/${logo}`}

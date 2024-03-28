@@ -28,7 +28,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="h-screen bg-hero-pattern bg-cover bg-no-repeat bg-center pt-24 p-6">
+    <section className="h-screen bg-hero bg-cover bg-no-repeat bg-center pt-24 p-6">
       <audio loop id="backgroundAudio" ref={backgroundAudioRef}>
         <source src="/background-music.mp3" type="audio/mp3" />
       </audio>
