@@ -10,13 +10,9 @@ import styles from '@/app/ui/styles';
 const About = () => {
   return (
     <section>
-      <h1 className="text-5xl font-bold">INTRODUCTION</h1>
-      <p className="max-w-full md:max-w-[80%] lg:max-w-[70%] xl:max-w-[60%] text-lg text-gray-300 pt-4 pb-16">
-        {introduction}
-      </p>
-      <div
-        className={`grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-16 ${styles.gapYScale} justify-items-center sm:justify-items-start`}
-      >
+      <h1 className={styles.sectionHeadText}>INTRODUCTION</h1>
+      <p className={styles.sectionSubText}>{introduction}</p>
+      <div className="flex flex-wrap gap-10">
         {skills.map((item: Skill, index: number) => (
           <SkillCard {...item} index={index} key={item.title} />
         ))}

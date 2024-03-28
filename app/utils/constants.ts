@@ -23,6 +23,8 @@ const skills: Skill[] = [
   {
     title: 'Javascript',
     icon: 'javascript.svg',
+    description:
+      'As dawn breaks, the forest awakens with chirping birds and rustling leaves. Sunlight filters through the canopy, casting dappled shadows. A deer grazes amidst verdant foliage, while a babbling brook meanders nearby. In this tranquil scene, time stands still, inviting contemplation and solace in the embrace of the wilderness.',
   },
   {
     title: 'Typescript',

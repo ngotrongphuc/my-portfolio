@@ -34,28 +34,30 @@ const Hero = () => {
       </audio>
       {isAudioPlaying ? (
         <SpeakerWaveIcon
-          className="w-12 h-12 cursor-pointer scale-x-[-1] absolute right-6"
+          className="size-6 sm:size-8 md:size-10 cursor-pointer scale-x-[-1] absolute right-6"
           onClick={toggleAudio}
         />
       ) : (
         <SpeakerXMarkIcon
-          className="w-12 h-12 cursor-pointer scale-x-[-1] absolute right-6"
+          className="size-6 sm:size-8 md:size-10 lg:size-12 cursor-pointer scale-x-[-1] absolute right-6"
           onClick={toggleAudio}
         />
       )}
-      <MoonCanvas className="float-right mt-12 mr-20 hidden md:block" />
-      <hgroup className="w-fit flex flex-col">
-        <h1 className={`${styles.heroHeadText}`}>
-          Hi, I&apos;m <span className=" text-yellow-500">Phuc</span>
-        </h1>
-        <h2 className={`${styles.heroSubText}`}>{heroSubText}</h2>
-        <p className={`${styles.heroTaglineText} max-w-[600px]`}>
-          {heroTaglineText}
-        </p>
-        <ElevatedButton className="self-center mt-20">
-          Contact me
-        </ElevatedButton>
-      </hgroup>
+      <div className="flex justify-between flex-col-reverse xs:flex-row">
+        <hgroup className="max-w-full sm:max-w-[70%] md:max-w-[60%] lg:max-w-[50%]">
+          <h1 className={styles.heroHeadText}>
+            Hi, I&apos;m <span className=" text-yellow-500">Phuc</span>
+          </h1>
+          <h2 className={styles.heroSubText}>{heroSubText}</h2>
+          <p className={`${styles.heroDescriptionText}`}>{heroTaglineText}</p>
+          <div className="justify-center flex mt-10 xs:mt-20">
+            <ElevatedButton>Contact me</ElevatedButton>
+          </div>
+        </hgroup>
+        <div className="flex justify-center pt-0 xs:pt-12 pb-4 xs:pb-0 px-4 sm:px-8 md:px-10 lg:px-20">
+          <MoonCanvas className="size-40 sm:size-60 lg:size-80" />
+        </div>
+      </div>
       <ScrollButton />
     </section>
   );

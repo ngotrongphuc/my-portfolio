@@ -18,10 +18,7 @@ const config: Config = {
         card: '0px 0px 45px -20px #ffffff',
       },
       screens: {
-        xs: '450px',
-        'lg-mobile': '425px',
-        'md-mobile': '375px',
-        'sm-mobile': '320px',
+        xs: '480px',
       },
     },
   },

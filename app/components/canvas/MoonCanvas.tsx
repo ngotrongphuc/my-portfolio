@@ -1,7 +1,7 @@
 import { Canvas, useLoader } from '@react-three/fiber';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { Environment, OrbitControls, Preload } from '@react-three/drei';
-import { Suspense } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import CanvasLoader from '../CanvasLoader';
 
 const Moon = ({ isMobile = false }) => {
@@ -12,7 +12,7 @@ const Moon = ({ isMobile = false }) => {
       <primitive
         scale={4.15}
         position={[0, 0, 0]}
-        rotation={[0, 0, 0]}
+        rotation={[0, 1, 0]}
         object={moon.scene}
       />
     </group>
