@@ -1,23 +1,23 @@
 import Image from 'next/image';
-import { Company } from '../utils/types';
+import { Company, Project } from '../utils/types';
 import TextWithLink from './TextWithLink';
 import styles from '../ui/styles';
 
-const WorkCard = ({ name, logo, position, time, description }: Company) => {
+const ProjectCard = ({ name, logo, description }: Project) => {
   return (
     <div className={`w-full xs:w-[450px] ${styles.styledCard}`}>
       <div className="flex">
         <Image
-          src={`/companies/${logo}`}
+          src={`/projects/${logo}`}
           alt={name}
           width={60}
           height={60}
           className="bg-white"
         />
         <div className="flex-1 pl-6">
-          <h2 className="text-xl font-bold">{position}</h2>
+          {/* <h2 className="text-xl font-bold">{position}</h2> */}
           <h3 className="font-medium text-gray-300">{name}</h3>
-          <h4 className="text-sm text-gray-300">{time}</h4>
+          {/* <h4 className="text-sm text-gray-300">{time}</h4> */}
         </div>
       </div>
       {Array.isArray(description) ? (
@@ -39,4 +39,4 @@ const WorkCard = ({ name, logo, position, time, description }: Company) => {
   );
 };
 
-export default WorkCard;
+export default ProjectCard;

@@ -17,6 +17,12 @@ export type Company = {
   description: string | string[];
 };
 
+export type Project = {
+  name: string;
+  logo: string;
+  description: string;
+}
+
 export enum Breakpoints {
   sm = 640,
   md = 768,

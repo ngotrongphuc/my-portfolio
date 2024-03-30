@@ -84,6 +84,14 @@ const companies: Company[] = [
   },
 ];
 
+const projects = [
+  {
+    name: 'Infinity Comic',
+    logo: '',
+    description: 'A web application for com'
+  }
+]
+
 const contact = {
   myName: 'Ngo Trong Phuc',
   myEmail: 'phucngo4499@gmail.com',
@@ -97,5 +105,6 @@ export {
   skills,
   introduction,
   companies,
+  projects,
   contact
 };

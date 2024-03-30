@@ -1,20 +1,21 @@
 'use client';
 import SectionWrapper from '@/app/hoc/SectionWrapper';
-import WorkCard from '../CompanyCard';
 import { companies } from '@/app/utils/constants';
 import { Company } from '@/app/utils/types';
 import styles from '@/app/ui/styles';
+import {
+  VerticalTimeline,
+  VerticalTimelineElement,
+} from 'react-vertical-timeline-component';
+import 'react-vertical-timeline-component/style.min.css';
+import WorkTimeline from '../WorkTimeline';
 
 const Work = () => {
   return (
     <section>
       <h1 className={styles.sectionHeadText}>WORK EXPERIENCE</h1>
       {/* <p className={styles.sectionSubText}></p> */}
-      <div className="flex flex-wrap gap-10">
-        {companies.map((item: Company) => (
-          <WorkCard {...item} key={item.name} />
-        ))}
-      </div>
+      <WorkTimeline />
     </section>
   );
 };
