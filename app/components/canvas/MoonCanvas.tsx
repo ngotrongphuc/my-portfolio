@@ -21,7 +21,7 @@ const Moon = ({ isMobile = false }) => {
 
 const MoonCanvas = (props: any) => {
   return (
-    <div {...props} className={`${props.className} size-80`}>
+    <div {...props} className={`${props.className}`}>
       <Canvas
         className="cursor-pointer rounded-full"
         frameloop="demand"

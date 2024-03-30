@@ -9,7 +9,7 @@ import ElevatedButton from '../ElevatedButton';
 import MoonCanvas from '../canvas/MoonCanvas';
 import ScrollButton from '../ScrollButton';
 import styles from '@/app/ui/styles';
-import { heroSubText, heroTaglineText } from '@/app/utils/constants';
+import { heroSubText, heroDescriptionText } from '@/app/utils/constants';
 
 const Hero = () => {
   const backgroundAudioRef = useRef<HTMLAudioElement>(null);
@@ -49,12 +49,12 @@ const Hero = () => {
             Hi, I&apos;m <span className=" text-yellow-500">Phuc</span>
           </h1>
           <h2 className={styles.heroSubText}>{heroSubText}</h2>
-          <p className={`${styles.heroDescriptionText}`}>{heroTaglineText}</p>
+          <p className={`${styles.heroDescriptionText}`}>{heroDescriptionText}</p>
           <div className="justify-center flex mt-10 xs:mt-20">
             <ElevatedButton>Contact me</ElevatedButton>
           </div>
         </hgroup>
-        <div className="flex justify-center pt-0 xs:pt-12 pb-4 xs:pb-0 px-4 sm:px-8 md:px-10 lg:px-20">
+        <div className="flex justify-center p-6 pt-0 xs:pt-12 px-4 sm:px-8 md:px-10 lg:px-20">
           <MoonCanvas className="size-40 sm:size-60 lg:size-80" />
         </div>
       </div>

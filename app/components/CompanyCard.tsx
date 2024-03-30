@@ -1,10 +1,11 @@
 import Image from 'next/image';
 import { Company } from '../utils/types';
 import TextWithLink from './TextWithLink';
+import styles from '../ui/styles';
 
 const WorkCard = ({ name, logo, position, time, description }: Company) => {
   return (
-    <div className="w-full xs:w-[450px] bg-gray-900 rounded-3xl p-6">
+    <div className={`w-full xs:w-[450px] ${styles.styledCard}`}>
       <div className="flex">
         <Image
           src={`/companies/${logo}`}

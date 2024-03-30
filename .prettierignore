@@ -7,3 +7,6 @@ coverage
 
 # public
 public/
+
+# env
+.env

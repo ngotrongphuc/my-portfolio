@@ -8,7 +8,7 @@ const navbarItems: NavbarItem[] = [
 
 const heroHeadText = '';
 const heroSubText = 'Front-end developer';
-const heroTaglineText = `I like to craft solid and scalable frontend products with great user experiences.`;
+const heroDescriptionText = `I like to craft solid and scalable frontend products with great user experiences.`;
 
 const skills: Skill[] = [
   {
@@ -56,8 +56,6 @@ const skills: Skill[] = [
 const introduction =
   "I'm a skilled software developer with experience in TypeScript and JavaScript, and expertise in frameworks like React, Node.js, and Three.js. I'm a quick learner and collaborate closely with clients to create efficient, scalable, and user-friendly solutions that solve real-world problems. Let's work together to bring your ideas to life!";
 
-const workExperience = '';
-
 const companies: Company[] = [
   {
     name: 'Zigvy Corporation',
@@ -86,13 +84,18 @@ const companies: Company[] = [
   },
 ];
 
+const contact = {
+  myName: 'Ngo Trong Phuc',
+  myEmail: 'phucngo4499@gmail.com',
+};
+
 export {
   navbarItems,
   heroHeadText,
   heroSubText,
-  heroTaglineText,
+  heroDescriptionText,
   skills,
   introduction,
-  workExperience,
   companies,
+  contact
 };

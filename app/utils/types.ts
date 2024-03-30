@@ -24,3 +24,17 @@ export enum Breakpoints {
   xl = 1280,
   '2xl' = 1536,
 }
+
+export type PopupPropsType = {
+  type?: 'success' | 'failure';
+  title?: string;
+  content?: string;
+  visible?: boolean;
+};
+
+export interface PopupRefType {
+  show(duration?:number): void;
+  hide(): void;
+  showSuccess(title: string, content: string, duration?: number): void;
+  showFailure(title: string, content: string, duration?: number): void;
+}

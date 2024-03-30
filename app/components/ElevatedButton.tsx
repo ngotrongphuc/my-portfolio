@@ -2,7 +2,7 @@ const ElevatedButton = ({
   children,
   className,
 }: {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   className?: string;
 }) => {
   return (

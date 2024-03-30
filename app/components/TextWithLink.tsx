@@ -1,12 +1,12 @@
 import Link from 'next/link';
+import { urlPattern } from '../utils/regexPatterns';
 
 const TextWithLink = ({ children }: { children: React.ReactNode }) => {
   if (typeof children !== 'string') {
     return children;
   }
 
-  const urlPattern =
-    /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([/\w.-]*)*\/?$/;
+
 
   return children?.split(' ').map((word, index) => {
     if (urlPattern.test(word)) {

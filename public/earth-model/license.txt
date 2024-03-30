@@ -1,11 +1,11 @@
 Model Information:
-* title:	Earth | Terra - Downloadable model
-* source:	https://sketchfab.com/3d-models/earth-terra-downloadable-model-30fd7e9c4e6946ddb6fcae7a97b2b0d4
-* author:	murilo.kleine (https://sketchfab.com/murilo.kleine)
+* title:	Earth
+* source:	https://sketchfab.com/3d-models/earth-f7a76c63ff1846afb2d606e5c8369c15
+* author:	PatelDev (https://sketchfab.com/PatelDev)
 
 Model License:
 * license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
 * requirements:	Author must be credited. Commercial use is allowed.
 
 If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
-This work is based on "Earth | Terra - Downloadable model" (https://sketchfab.com/3d-models/earth-terra-downloadable-model-30fd7e9c4e6946ddb6fcae7a97b2b0d4) by murilo.kleine (https://sketchfab.com/murilo.kleine) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+This work is based on "Earth" (https://sketchfab.com/3d-models/earth-f7a76c63ff1846afb2d606e5c8369c15) by PatelDev (https://sketchfab.com/PatelDev) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

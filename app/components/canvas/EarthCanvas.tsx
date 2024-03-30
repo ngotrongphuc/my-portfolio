@@ -10,7 +10,7 @@ const Earth = ({ isMobile = false }) => {
   return (
     <group>
       <primitive
-        scale={4.15}
+        scale={3.75}
         position={[0, 0, 0]}
         rotation={[0, 0, 0]}
         object={earth.scene}
@@ -21,7 +21,7 @@ const Earth = ({ isMobile = false }) => {
 
 const EarthCanvas = (props: any) => {
   return (
-    <div {...props} className={`${props.className} size-80`}>
+    <div {...props} className={`${props.className}`}>
       <Canvas
         className="cursor-pointer rounded-full"
         frameloop="demand"
@@ -43,7 +43,7 @@ const EarthCanvas = (props: any) => {
             autoRotate
             autoRotateSpeed={1}
           />
-          <hemisphereLight intensity={5} groundColor={'black'} />
+          <ambientLight intensity={2} />
         </Suspense>
         <Preload all />
       </Canvas>

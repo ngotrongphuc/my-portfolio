@@ -9,6 +9,9 @@ const styles = {
     'font-bold text-[32px] xs:text-[36px] sm:text-[40px] md:text-[44px] lg:text-[48px]',
   sectionSubText:
     'md:max-w-[80%] lg:max-w-[70%] xl:max-w-[60%] text-gray-300 pt-4 pb-16 xs:text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px]',
+  styledCard: 'bg-gray-900 rounded-3xl p-6',
+  sectionWrapper:
+    'flex mx-auto p-4 xs:p-6 max-w-full md:max-w-[95%] lg:max-w-[90%] xl:max-w-[85%] 2xl:max-w-7xl',
 };
 
 export default styles;
