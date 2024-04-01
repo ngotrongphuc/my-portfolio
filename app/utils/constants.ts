@@ -3,6 +3,7 @@ import { Company, NavbarItem, Skill } from './types';
 const navbarItems: NavbarItem[] = [
   { name: 'About', href: '/#about' },
   { name: 'Work', href: '/#work' },
+  { name: 'Projects', href: '/#projects' },
   { name: 'Contact', href: '/#contact' },
 ];
 

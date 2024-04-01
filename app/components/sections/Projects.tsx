@@ -8,7 +8,7 @@ import { Project } from '@/app/utils/types';
 const Projects = () => {
   return (
     <section>
-      <h1 className={styles.sectionHeadText}>WORK EXPERIENCE</h1>
+      <h1 className={styles.sectionHeadText}>PROJECTS</h1>
       <div className="flex flex-wrap gap-10">
         {projects.map((item: Project) => (
           <ProjectCard {...item} key={item.name} />
