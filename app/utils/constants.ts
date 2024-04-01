@@ -9,53 +9,59 @@ const navbarItems: NavbarItem[] = [
 
 const heroHeadText = '';
 const heroSubText = 'Front-end developer';
-const heroDescriptionText = `I like to craft solid and scalable frontend products with great user experiences.`;
+const heroDescriptionText = `I like to craft solid and scalable front-end products with great user experiences.`;
+
+const introduction =
+  "I'm a skilled front-end developer with experience in JavaScript and TypeScript, and expertise in frameworks like Reactjs, Nextjs, and Vuejs. I'm a quick learner and collaborate closely with clients to create efficient, scalable, and user-friendly solutions that solve real-world problems. Let's work together to bring your ideas to life!";
 
 const skills: Skill[] = [
   {
     title: 'HTML5',
     icon: 'html5.svg',
+    description:
+      'Proficient in HTML5, adept at crafting well-structured and semantically meaningful web content',
   },
   {
     title: 'CSS3',
     icon: 'css3.svg',
-    description: 'I can also work with Tailwind, Bootstrap and other libraries',
+    description:
+      'Skilled in CSS3, allow me to create stunning and responsive designs, enhance user experiences across various platforms. Familiar with Tailwind, Bootstrap and other UI libraries',
   },
   {
     title: 'Javascript',
     icon: 'javascript.svg',
     description:
-      'As dawn breaks, the forest awakens with chirping birds and rustling leaves. Sunlight filters through the canopy, casting dappled shadows. A deer grazes amidst verdant foliage, while a babbling brook meanders nearby. In this tranquil scene, time stands still, inviting contemplation and solace in the embrace of the wilderness.',
+      'Fluent in JavaScript, able to deal with complex algorithms, optimize functions to enhance performance and efficiency',
   },
   {
     title: 'Typescript',
     icon: 'typescript.svg',
+    description:
+      'Competent in TypeScript for building robust and type-safe applications with enhanced code readability and maintainability',
   },
   {
     title: 'Reactjs',
     icon: 'reactjs.svg',
     description:
-      'I can also work with React Native (native or Expo), Redux (Saga/Thunk)',
+      'Specialize in Reactjs and React Native (Expo). Familiar with Redux Saga/Thunk, Redux Toolkit',
   },
   {
     title: 'Vuejs',
     icon: 'vuejs.svg',
-    description: 'Worked with Vuetify, Vuex',
+    description: 'Experienced in Vuejs. Familiar with Vuetify, Vuex',
   },
   {
     title: 'Nextjs',
     icon: 'nextjs.svg',
-    description: 'Worked with Threejs, react-three-fiber, react-three/drei',
+    description:
+      'Knowledgeable in SSR and CSR. Familiar with threejs, react-three-fiber, react-three/drei',
   },
   {
     title: 'Git',
     icon: 'git.svg',
-    description: 'GitHub, GitLab',
+    description: 'Familiar with GitHub, GitLab',
   },
 ];
-
-const introduction =
-  "I'm a skilled software developer with experience in TypeScript and JavaScript, and expertise in frameworks like React, Node.js, and Three.js. I'm a quick learner and collaborate closely with clients to create efficient, scalable, and user-friendly solutions that solve real-world problems. Let's work together to bring your ideas to life!";
 
 const companies: Company[] = [
   {
@@ -68,7 +74,7 @@ const companies: Company[] = [
       'Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.',
       'Implementing responsive design and ensuring cross-browser compatibility',
       'Participating in code reviews and providing constructive feedback to other developers.',
-      'Website: https://www.hrforte.com/hr-octopro/',
+      'Url: https://www.hrforte.com/hr-octopro/',
     ],
   },
   {
@@ -89,27 +95,37 @@ const projects = [
   {
     name: 'HR Octo Pro',
     logo: 'hr-octo-pro.svg',
-    description: 'A management web app for Human Resources',
+    description: [
+      'A management web app for Human Resources',
+      'https://www.hrforte.com/hr-octopro/',
+    ],
   },
   {
     name: 'TCG POS Siegfried',
     logo: 'tcg-pos-siegfried.ico',
-    description: 'A desktop app for retail system of trading card game in Japan',
+    description: 'A desktop app for POS system of trading card game in Japan',
   },
   {
     name: 'Infinity Comic',
     logo: 'infinity-comic.png',
-    description: 'A comic reader app, which has basic features made from my own experiences. Managed by admin web',
+    description: [
+      'A comic reader app, which has basic features made from my own experiences. Managed by an admin web',
+      'https://infinity-comic.web.app/',
+    ],
   },
   {
     name: 'Awesome Chatbot',
     logo: 'awesome-chatbot.png',
-    description: 'A web application for com',
+    description:
+      'A mobile app for chatting with bots, which is a mini project of mine',
   },
   {
     name: 'The movie db website',
     logo: 'the-movie-db-website.svg',
-    description: 'A website to search and check information of movies. Data used from themoviedb api',
+    description: [
+      'A website to search and check information of movies. Data used from themoviedb api',
+      'https://themoviedb-website.web.app/',
+    ],
   },
 ];
 

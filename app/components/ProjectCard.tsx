@@ -5,7 +5,7 @@ import styles from '../ui/styles';
 
 const ProjectCard = ({ name, logo, description }: Project) => {
   return (
-    <div className={`w-full xs:w-[350px] ${styles.styledCard}`}>
+    <div className={`w-full xs:w-[360px] ${styles.styledCard}`}>
       <div className="flex">
         <Image
           src={`/projects/${logo}`}

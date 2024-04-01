@@ -20,8 +20,8 @@ export type Company = {
 export type Project = {
   name: string;
   logo: string;
-  description: string;
-}
+  description: string | string[];
+};
 
 export enum Breakpoints {
   sm = 640,
@@ -39,7 +39,7 @@ export type PopupPropsType = {
 };
 
 export interface PopupRefType {
-  show(duration?:number): void;
+  show(duration?: number): void;
   hide(): void;
   showSuccess(title: string, content: string, duration?: number): void;
   showFailure(title: string, content: string, duration?: number): void;
