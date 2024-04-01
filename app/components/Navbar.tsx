@@ -44,7 +44,7 @@ const Navbar = () => {
               className="size-6 scale-150 cursor-pointer"
               onClick={toggleMenu}
             />
-            <div className="flex flex-col bg-gray-900 absolute right-[4px] top-[70px] rounded-3xl divide-y shadow-md shadow-gray-700">
+            <div className="flex flex-col bg-gray-900 absolute right-[10px] top-[70px] rounded-3xl divide-y divide-gray-700 shadow-md shadow-gray-700">
               {navbarItems.map((item: NavbarItem) => (
                 <Link href={item.href} key={item.name} className="px-6 py-4 b">
                   <p>{item.name}</p>

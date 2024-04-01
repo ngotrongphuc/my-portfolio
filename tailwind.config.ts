@@ -16,7 +16,7 @@ const config: Config = {
         'not-found': "url('/not-found-bg.jpg')"
       },
       boxShadow: {
-        card: '0px 0px 45px -20px #ffffff',
+        card: '0px 0px 20px -5px #ffffff',
       },
       screens: {
         xs: '480px',

@@ -18,7 +18,7 @@ const SkillCard = ({
       className="w-full xs:w-[250px] max-[587px]:min-w-full"
     >
       <Tilt className="h-full bg-gradient-to-br from-teal-400 to-purple-500 rounded-3xl hover:shadow-card p-[1px]">
-        <div className={`h-full ${styles.styledCard}`}>
+        <div className={`h-full ${styles.styledCard} shadow-none`}>
           <h2 className="text-xl font-medium text-center">{title}</h2>
           <Image
             src={`/skills/${icon}`}

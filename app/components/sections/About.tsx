@@ -12,7 +12,7 @@ const About = () => {
     <section>
       <h1 className={styles.sectionHeadText}>INTRODUCTION</h1>
       <p className={styles.sectionSubText}>{introduction}</p>
-      <div className="flex flex-wrap gap-10">
+      <div className="flex flex-wrap gap-x-14 gap-y-20">
         {skills.map((item: Skill, index: number) => (
           <SkillCard {...item} index={index} key={item.title} />
         ))}

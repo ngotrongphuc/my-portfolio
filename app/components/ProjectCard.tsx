@@ -5,18 +5,18 @@ import styles from '../ui/styles';
 
 const ProjectCard = ({ name, logo, description }: Project) => {
   return (
-    <div className={`w-full xs:w-[450px] ${styles.styledCard}`}>
+    <div className={`w-full xs:w-[350px] ${styles.styledCard}`}>
       <div className="flex">
         <Image
           src={`/projects/${logo}`}
           alt={name}
           width={60}
           height={60}
-          className="bg-white"
+          // className="bg-white"
         />
         <div className="flex-1 pl-6">
-          {/* <h2 className="text-xl font-bold">{position}</h2> */}
-          <h3 className="font-medium text-gray-300">{name}</h3>
+          <h2 className="text-xl font-bold">{name}</h2>
+          {/* <h3 className="font-medium text-gray-300">{name}</h3> */}
           {/* <h4 className="text-sm text-gray-300">{time}</h4> */}
         </div>
       </div>

@@ -87,11 +87,31 @@ const companies: Company[] = [
 
 const projects = [
   {
+    name: 'HR Octo Pro',
+    logo: 'hr-octo-pro.svg',
+    description: 'A management web app for Human Resources',
+  },
+  {
+    name: 'TCG POS Siegfried',
+    logo: 'tcg-pos-siegfried.ico',
+    description: 'A desktop app for retail system of trading card game in Japan',
+  },
+  {
     name: 'Infinity Comic',
-    logo: '',
-    description: 'A web application for com'
-  }
-]
+    logo: 'infinity-comic.png',
+    description: 'A comic reader app, which has basic features made from my own experiences. Managed by admin web',
+  },
+  {
+    name: 'Awesome Chatbot',
+    logo: 'awesome-chatbot.png',
+    description: 'A web application for com',
+  },
+  {
+    name: 'The movie db website',
+    logo: 'the-movie-db-website.svg',
+    description: 'A website to search and check information of movies. Data used from themoviedb api',
+  },
+];
 
 const contact = {
   myName: 'Ngo Trong Phuc',
@@ -107,5 +127,5 @@ export {
   introduction,
   companies,
   projects,
-  contact
+  contact,
 };

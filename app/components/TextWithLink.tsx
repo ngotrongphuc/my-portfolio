@@ -15,7 +15,7 @@ const TextWithLink = ({ children }: { children: React.ReactNode }) => {
           href={word}
           target="_blank"
           key={index}
-          className="underline text-slate-400"
+          className="underline text-slate-400 break-all"
         >
           {word}
         </Link>
