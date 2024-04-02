@@ -10,6 +10,7 @@ import TextWithLink from './TextWithLink';
 import { useInView } from 'framer-motion';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Company } from '../utils/types';
+import UrlWrapper from './UrlWrapper';
 
 const WorkTimelineItem = ({
   name,
@@ -17,6 +18,7 @@ const WorkTimelineItem = ({
   position,
   time,
   description,
+  url,
   index,
 }: Company & { index: number }) => {
   const ref = useRef(null);
@@ -41,21 +43,24 @@ const WorkTimelineItem = ({
         <h4 className="vertical-timeline-element-subtitle font-medium text-gray-300">
           {name}
         </h4>
-        {Array.isArray(description) ? (
-          <ul className="list-disc pl-6">
-            {description.map((item, index) => (
-              <li key={index} className="pt-2 first:pt-6">
+        <ul className="list-disc pt-5 pl-5 space-y-2">
+          {Array.isArray(description) ? (
+            description.map((item, index) => (
+              <li key={index}>
                 <TextWithLink>{item}</TextWithLink>
               </li>
-            ))}
-          </ul>
-        ) : (
-          <ul className="list-disc pl-6">
-            <li className="pt-2 first:pt-6">
+            ))
+          ) : (
+            <li>
               <TextWithLink>{description}</TextWithLink>
             </li>
-          </ul>
-        )}
+          )}
+          {url && (
+            <li>
+              <UrlWrapper>{url}</UrlWrapper>
+            </li>
+          )}
+        </ul>
       </VerticalTimelineElement>
     </div>
   );

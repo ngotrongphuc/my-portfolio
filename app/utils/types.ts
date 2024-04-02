@@ -15,13 +15,35 @@ export type Company = {
   position: string;
   time: string;
   description: string | string[];
+  url?: UrlType;
 };
 
 export type Project = {
   name: string;
   logo: string;
   description: string | string[];
+  url?: UrlType;
 };
+
+export type UrlType =
+  | string
+  | {
+      android?: {
+        url: string;
+        qr: string;
+      };
+      ios?: {
+        url: string;
+        qr: string;
+      };
+      web?: string;
+    };
+
+export enum DeviceTypes {
+  android = 'Android',
+  ios = 'IOS',
+  web = 'Web',
+}
 
 export enum Breakpoints {
   sm = 640,

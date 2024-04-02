@@ -6,8 +6,6 @@ const TextWithLink = ({ children }: { children: React.ReactNode }) => {
     return children;
   }
 
-
-
   return children?.split(' ').map((word, index) => {
     if (urlPattern.test(word)) {
       return (
@@ -15,9 +13,9 @@ const TextWithLink = ({ children }: { children: React.ReactNode }) => {
           href={word}
           target="_blank"
           key={index}
-          className="underline text-slate-400 break-all"
+          className="underline text-blue-500 break-all"
         >
-          {word}
+          Website
         </Link>
       );
     } else {

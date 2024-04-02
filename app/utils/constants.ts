@@ -1,4 +1,4 @@
-import { Company, NavbarItem, Skill } from './types';
+import { Company, NavbarItem, Project, Skill } from './types';
 
 const navbarItems: NavbarItem[] = [
   { name: 'About', href: '/#about' },
@@ -74,8 +74,8 @@ const companies: Company[] = [
       'Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.',
       'Implementing responsive design and ensuring cross-browser compatibility',
       'Participating in code reviews and providing constructive feedback to other developers.',
-      'Url: https://www.hrforte.com/hr-octopro/',
     ],
+    url: 'https://www.hrforte.com/hr-octopro/',
   },
   {
     name: 'Rooxim Computer Science',
@@ -91,14 +91,12 @@ const companies: Company[] = [
   },
 ];
 
-const projects = [
+const projects: Project[] = [
   {
     name: 'HR Octo Pro',
     logo: 'hr-octo-pro.svg',
-    description: [
-      'A management web app for Human Resources',
-      'https://www.hrforte.com/hr-octopro/',
-    ],
+    description: 'A management web app for Human Resources',
+    url: 'https://www.hrforte.com/hr-octopro/',
   },
   {
     name: 'TCG POS Siegfried',
@@ -108,24 +106,32 @@ const projects = [
   {
     name: 'Infinity Comic',
     logo: 'infinity-comic.png',
-    description: [
+    description:
       'A comic reader app, which has basic features made from my own experiences. Managed by an admin web',
-      'https://infinity-comic.web.app/',
-    ],
+    url: 'https://infinity-comic.web.app/',
   },
   {
     name: 'Awesome Chatbot',
     logo: 'awesome-chatbot.png',
     description:
       'A mobile app for chatting with bots, which is a mini project of mine',
+    url: {
+      android: {
+        url: 'exp://u.expo.dev/update/ca5252c1-b803-493d-937e-ecf50442e1f0',
+        qr: 'awesome-chatbot-android.svg',
+      },
+      ios: {
+        url: 'exp://u.expo.dev/update/fda0bf88-88a2-4e75-b08c-6ae6c56fa7d8',
+        qr: 'awesome-chatbot-ios.svg',
+      },
+    },
   },
   {
     name: 'The movie db website',
     logo: 'the-movie-db-website.svg',
-    description: [
+    description:
       'A website to search and check information of movies. Data used from themoviedb api',
-      'https://themoviedb-website.web.app/',
-    ],
+    url: 'https://themoviedb-website.web.app/',
   },
 ];
 

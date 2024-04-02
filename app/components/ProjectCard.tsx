@@ -2,8 +2,9 @@ import Image from 'next/image';
 import { Company, Project } from '../utils/types';
 import TextWithLink from './TextWithLink';
 import styles from '../ui/styles';
+import UrlWrapper from './UrlWrapper';
 
-const ProjectCard = ({ name, logo, description }: Project) => {
+const ProjectCard = ({ name, logo, description, url }: Project) => {
   return (
     <div className={`w-full xs:w-[360px] ${styles.styledCard}`}>
       <div className="flex">
@@ -20,21 +21,24 @@ const ProjectCard = ({ name, logo, description }: Project) => {
           {/* <h4 className="text-sm text-gray-300">{time}</h4> */}
         </div>
       </div>
-      {Array.isArray(description) ? (
-        <ul className="list-disc pl-6">
-          {description.map((item, index) => (
-            <li key={index} className="pt-2 first:pt-6">
+      <ul className="list-disc pt-5 pl-5 space-y-2">
+        {Array.isArray(description) ? (
+          description.map((item, index) => (
+            <li key={index}>
               <TextWithLink>{item}</TextWithLink>
             </li>
-          ))}
-        </ul>
-      ) : (
-        <ul className="list-disc pl-6">
-          <li className="pt-2 first:pt-6">
+          ))
+        ) : (
+          <li>
             <TextWithLink>{description}</TextWithLink>
           </li>
-        </ul>
-      )}
+        )}
+        {url && (
+          <li>
+            <UrlWrapper>{url}</UrlWrapper>
+          </li>
+        )}
+      </ul>
     </div>
   );
 };
