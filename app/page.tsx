@@ -14,11 +14,6 @@ export default function Home() {
       <Work />
       <Projects/>
       <Contact />
-      {/* <ComputerCanvas /> */}
-      {/* <video id="backgroundMusic" controls autoPlay loop>
-        <source src="/interstellar_theme.mp3" type="audio/mpeg" />
-      </video> */}
-      {/* asd */}
     </div>
   );
 }

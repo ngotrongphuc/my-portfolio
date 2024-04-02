@@ -3,6 +3,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { Environment, OrbitControls, Preload } from '@react-three/drei';
 import { Suspense } from 'react';
 import CanvasLoader from '../CanvasLoader';
+import * as THREE from 'three'
 
 const Computer = ({ isMobile = false }) => {
   const computer = useLoader(GLTFLoader, '/computer-model/scene.gltf');
@@ -10,9 +11,9 @@ const Computer = ({ isMobile = false }) => {
   return (
     <group>
       <primitive
-        scale={0.6}
-        position={[0, 0, 0]}
-        rotation={[0, -1, 0]}
+        scale={0.7}
+        position={[1, -1.5, 0]}
+        rotation={[0, -1.5, -0.1]}
         object={computer.scene}
       />
     </group>
@@ -21,13 +22,15 @@ const Computer = ({ isMobile = false }) => {
 
 const ComputerCanvas = (props: any) => {
   return (
-    <div {...props} className={`${props.className} w-[1200px] h-[800px]`}>
+    <div
+      {...props}
+      className={`${props.className} w-[99%] aspect-[2/1]`}
+    >
       <Canvas
-        className="cursor-pointer bg-green-200"
         frameloop="demand"
         camera={{
           position: [0, 0, 10],
-          rotation: [-0.5, 0, 0],
+          rotation: [0, 0, 0],
           fov: 50,
           near: 0.1,
           far: 2000,
@@ -38,14 +41,11 @@ const ComputerCanvas = (props: any) => {
         <Suspense fallback={<CanvasLoader />}>
           <Computer />
           <OrbitControls
-          // enableZoom={false}
-          // enablePan={false}
-          // maxPolarAngle={Math.PI / 2.5}
-          // minPolarAngle={Math.PI / 2.5}
+            enableZoom={false}
+            enablePan={false}
+            maxPolarAngle={Math.PI / 2}
+            minPolarAngle={Math.PI / 2}
           />
-          {/* <Environment preset="forest" /> */}
-          {/* <ambientLight intensity={10} /> */}
-          {/* <hemisphereLight intensity={1} groundColor={'black'}/> */}
           <pointLight intensity={1} position={[5, 5, 10]} decay={0} />
           <spotLight
             intensity={10}

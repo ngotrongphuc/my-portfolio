@@ -90,8 +90,7 @@ const Contact = () => {
       <SpaceCanvas className="absolute inset-0 z-[-1] bg-gray-950" />
       <Popup ref={popupRef} />
       <div className={`${styles.sectionWrapper} flex flex-col`}>
-        <h1 className={styles.sectionHeadText}>CONTACT</h1>
-        {/* <p className={styles.sectionSubText}></p> */}
+        <h1 className={`${styles.sectionHeadText} mb-10`}>CONTACT</h1>
 
         <div className="flex justify-between flex-col-reverse sm:flex-row">
           <form

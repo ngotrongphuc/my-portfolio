@@ -51,7 +51,7 @@ const Hero = () => {
           <h2 className={styles.heroSubText}>{heroSubText}</h2>
           <p className={`${styles.heroDescriptionText}`}>{heroDescriptionText}</p>
           <div className="justify-center flex mt-10 xs:mt-20">
-            <ElevatedButton>Contact me</ElevatedButton>
+            <ElevatedButton href='/#contact'>Contact me</ElevatedButton>
           </div>
         </hgroup>
         <div className="flex justify-center p-6 pt-0 xs:pt-12 px-4 sm:px-8 md:px-10 lg:px-20">

@@ -13,8 +13,7 @@ import WorkTimeline from '../WorkTimeline';
 const Work = () => {
   return (
     <section>
-      <h1 className={styles.sectionHeadText}>WORK EXPERIENCE</h1>
-      {/* <p className={styles.sectionSubText}></p> */}
+      <h1 className={`${styles.sectionHeadText} mb-10`}>WORK EXPERIENCE</h1>
       <WorkTimeline />
     </section>
   );
