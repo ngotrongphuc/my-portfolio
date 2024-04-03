@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { DeviceTypes, UrlType } from '../utils/types';
+import { DeviceTypes, ModalRefType, UrlType } from '../utils/types';
 import Modal from './Modal';
 import { useMemo, useRef, useState } from 'react';
 import Image from 'next/image';
@@ -7,7 +7,7 @@ import ElevatedButton from './ElevatedButton';
 
 const UrlWrapper = ({ children }: { children: UrlType }) => {
   const { android, ios, web }: [keyof UrlType] | any = children;
-  const modalRef = useRef<any>(null);
+  const modalRef = useRef<ModalRefType>(null);
   const [currentDeviceType, setCurrentDeviceType] =
     useState<null | DeviceTypes>(null);
   const modalTitle = useMemo(
@@ -39,7 +39,7 @@ const UrlWrapper = ({ children }: { children: UrlType }) => {
           >
             {currentDeviceType === DeviceTypes.android ? android.url : ios.url}
           </Link>
-          <ElevatedButton className="pt-6" onClick={modalRef.current?.close}>
+          <ElevatedButton className="pt-6" onClick={modalRef.current?.hide}>
             Close
           </ElevatedButton>
         </div>
@@ -47,9 +47,9 @@ const UrlWrapper = ({ children }: { children: UrlType }) => {
     );
   };
 
-  const openModal = (currentUrlType: DeviceTypes) => {
+  const showModal = (currentUrlType: DeviceTypes) => {
     setCurrentDeviceType(currentUrlType);
-    modalRef.current?.open();
+    modalRef.current?.show();
   };
 
   if (typeof children === 'string') {
@@ -78,12 +78,14 @@ const UrlWrapper = ({ children }: { children: UrlType }) => {
 
   return (
     <div>
-      <Modal ref={modalRef} title={modalTitle} body={<ModalBody />} />
+      <Modal ref={modalRef} title={modalTitle}>
+        <ModalBody />
+      </Modal>
       <div className="divide-x-2">
         {children?.android && (
           <span
             className="text-blue-500 cursor-pointer px-2 first:pl-0"
-            onClick={() => openModal(DeviceTypes.android)}
+            onClick={() => showModal(DeviceTypes.android)}
           >
             Android
           </span>
@@ -91,7 +93,7 @@ const UrlWrapper = ({ children }: { children: UrlType }) => {
         {children?.ios && (
           <span
             className="text-blue-500 cursor-pointer px-2 first:pl-0"
-            onClick={() => openModal(DeviceTypes.ios)}
+            onClick={() => showModal(DeviceTypes.ios)}
           >
             IOS
           </span>

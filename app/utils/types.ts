@@ -53,6 +53,17 @@ export enum Breakpoints {
   '2xl' = 1536,
 }
 
+export type ModalPropsType = {
+  visible?: boolean;
+  title?: string;
+  children?: React.ReactNode;
+};
+
+export interface ModalRefType {
+  show(): void;
+  hide(): void;
+}
+
 export type PopupPropsType = {
   type?: 'success' | 'failure';
   title?: string;

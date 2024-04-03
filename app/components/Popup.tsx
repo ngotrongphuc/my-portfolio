@@ -57,21 +57,19 @@ const Popup = forwardRef<PopupRefType, PopupPropsType>(
     }));
 
     return (
-      <>
-        {popupVisible && (
-          <div
-            className={`${styles.styledCard} fixed top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] z-50 text-center flex flex-col justify-center items-center shadow-sm shadow-white`}
-          >
-            <h3 className="text-2xl mb-3">{popupTitle}</h3>
-            <p className="text-xl mb-6">{popupContent}</p>
-            {popupType === 'success' ? (
-              <CheckCircleIcon className="text-green-500 size-16" />
-            ) : (
-              <XCircleIcon className="text-red-500 size-16" />
-            )}
-          </div>
-        )}
-      </>
+      popupVisible && (
+        <div
+          className={`${styles.styledCard} fixed top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] z-50 text-center flex flex-col justify-center items-center shadow-sm shadow-white`}
+        >
+          <h3 className="text-2xl mb-3">{popupTitle}</h3>
+          <p className="text-xl mb-6">{popupContent}</p>
+          {popupType === 'success' ? (
+            <CheckCircleIcon className="text-green-500 size-16" />
+          ) : (
+            <XCircleIcon className="text-red-500 size-16" />
+          )}
+        </div>
+      )
     );
   },
 );
