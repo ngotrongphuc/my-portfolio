@@ -107,8 +107,15 @@ const projects: Project[] = [
     name: 'Infinity Comic',
     logo: 'infinity-comic.png',
     description:
-      'A comic reader app, which has basic features made from my own experiences. Managed by an admin web',
-    url: 'https://infinity-comic.web.app/',
+      'A comic reader app for mobile, which has basic features made from my own experiences. Managed by an admin web',
+    url: {
+      web: 'https://infinity-comic.web.app/',
+      androidAndIos: {
+        url: 'https://expo.dev/preview/update?message=update%20expo%20sdk%20version%20to%2049&updateRuntimeVersion=1.0.0&createdAt=2024-04-04T17%3A45%3A39.179Z&scheme=exp&projectId=5d5007d4-d4f0-45da-af5b-c57e1235cc7f&group=c9ed96ec-3d4f-4677-baef-458728111b96',
+        qrUrl:
+          'https://qr.expo.dev/eas-update?appScheme=exp&projectId=5d5007d4-d4f0-45da-af5b-c57e1235cc7f&groupId=c9ed96ec-3d4f-4677-baef-458728111b96',
+      },
+    },
   },
   {
     name: 'Awesome Chatbot',
@@ -116,17 +123,10 @@ const projects: Project[] = [
     description:
       'A mobile app for chatting with bots, which is a mini project of mine',
     url: {
-      // android: {
-      //   url: 'exp://u.expo.dev/update/ca5252c1-b803-493d-937e-ecf50442e1f0',
-      //   qrUrl: 'awesome-chatbot-android.svg',
-      // },
-      // ios: {
-      //   url: 'exp://u.expo.dev/update/fda0bf88-88a2-4e75-b08c-6ae6c56fa7d8',
-      //   qrUrl: 'awesome-chatbot-ios.svg',
-      // },
       androidAndIos: {
         url: 'https://expo.dev/preview/update?message=remove%20bot%20avatars%20in%20assets&updateRuntimeVersion=exposdk%3A50.0.0&createdAt=2024-04-04T14%3A41%3A57.877Z&scheme=exp&projectId=22d45950-a50e-481d-8477-eea11b0501c6&group=9da9ebda-4e51-4378-bdc1-e5cede0d39ab',
-        qrUrl: 'https://qr.expo.dev/eas-update?appScheme=exp&projectId=22d45950-a50e-481d-8477-eea11b0501c6&groupId=9da9ebda-4e51-4378-bdc1-e5cede0d39ab',
+        qrUrl:
+          'https://qr.expo.dev/eas-update?appScheme=exp&projectId=22d45950-a50e-481d-8477-eea11b0501c6&groupId=9da9ebda-4e51-4378-bdc1-e5cede0d39ab',
       },
     },
   },

@@ -21,8 +21,14 @@ const UrlWrapper = ({ children }: { children: UrlType }) => {
         <p>{`Scan the following QR code with an ${currentDeviceType} device to open it in Expo Go or a development build.`}</p>
         <div className="flex flex-col items-center justify-center">
           <Image
-            src={currentDeviceType === DeviceTypes.android ? android.qrUrl : currentDeviceType === DeviceTypes.ios ? ios.qrUrl : androidAndIos.qrUrl}
-            alt='Expo Go QR Code'
+            src={
+              currentDeviceType === DeviceTypes.android
+                ? android.qrUrl
+                : currentDeviceType === DeviceTypes.ios
+                  ? ios.qrUrl
+                  : androidAndIos.qrUrl
+            }
+            alt="Expo Go QR Code"
             width={200}
             height={200}
             className="my-6"
@@ -30,12 +36,22 @@ const UrlWrapper = ({ children }: { children: UrlType }) => {
           <p>Or, open this link on your device:</p>
           <Link
             href={
-              currentDeviceType === DeviceTypes.android ? android.url : currentDeviceType === DeviceTypes.ios ? ios.url : androidAndIos.url
+              currentDeviceType === DeviceTypes.android
+                ? android.url
+                : currentDeviceType === DeviceTypes.ios
+                  ? ios.url
+                  : androidAndIos.url
             }
             target="_blank"
             className="underline text-slate-400 break-all"
           >
-            <p className='line-clamp-1'>{currentDeviceType === DeviceTypes.android ? android.url : currentDeviceType === DeviceTypes.ios ? ios.url : androidAndIos.url}</p>
+            <p className="line-clamp-1">
+              {currentDeviceType === DeviceTypes.android
+                ? android.url
+                : currentDeviceType === DeviceTypes.ios
+                  ? ios.url
+                  : androidAndIos.url}
+            </p>
           </Link>
           <ElevatedButton className="pt-6" onClick={modalRef.current?.hide}>
             Close
@@ -50,55 +66,40 @@ const UrlWrapper = ({ children }: { children: UrlType }) => {
     modalRef.current?.show();
   };
 
-  if (typeof children === 'string') {
-    return (
-      <Link
-        href={children}
-        target="_blank"
-        className="underline text-blue-500 break-all"
-      >
-        Website
-      </Link>
-    );
-  }
-
-  if (web) {
-    return (
-      <Link
-        href={web.url}
-        target="_blank"
-        className="underline text-blue-500 break-all"
-      >
-        Website
-      </Link>
-    );
-  }
-
   return (
     <div>
       <Modal ref={modalRef} title={modalTitle}>
         <ModalBody />
       </Modal>
       <div className="divide-x-2">
-        {children?.android && (
+        {(typeof children === 'string' || web) && (
+          <Link
+            href={typeof children === 'string' ? children : web}
+            target="_blank"
+            className="underline text-blue-500 px-2 first:pl-0"
+          >
+            Website
+          </Link>
+        )}
+        {android && (
           <span
-            className="text-blue-500 cursor-pointer px-2 first:pl-0"
+            className="underline text-blue-500 cursor-pointer px-2 first:pl-0"
             onClick={() => showModal(DeviceTypes.android)}
           >
             Android
           </span>
         )}
-        {children?.ios && (
+        {ios && (
           <span
-            className="text-blue-500 cursor-pointer px-2 first:pl-0"
+            className="underline text-blue-500 cursor-pointer px-2 first:pl-0"
             onClick={() => showModal(DeviceTypes.ios)}
           >
             IOS
           </span>
         )}
-        {children?.androidAndIos && (
+        {androidAndIos && (
           <span
-            className="text-blue-500 cursor-pointer px-2 first:pl-0"
+            className="underline text-blue-500 cursor-pointer px-2 first:pl-0"
             onClick={() => showModal(DeviceTypes.androidAndIos)}
           >
             {DeviceTypes.androidAndIos}
