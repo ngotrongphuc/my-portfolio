@@ -15,33 +15,33 @@ export type Company = {
   position: string;
   time: string;
   description: string | string[];
-  url?: UrlType;
+  url?: UrlList;
 };
 
 export type Project = {
   name: string;
   logo: string;
   description: string | string[];
-  url?: UrlType;
+  url?: UrlList;
 };
 
-export type UrlType =
-  | string
-  | {
-      android?: {
-        url: string;
-        qrUrl: string;
-      };
-      ios?: {
-        url: string;
-        qrUrl: string;
-      };
-      androidAndIos?: {
-        url: string;
-        qrUrl: string;
-      }
-      web?: string;
-    };
+export type Url = {
+  type: string;
+  title: string;
+  url: string;
+  qrUrl?: string;
+  apkUrl?: string;
+  modalId?: string;
+  [x: string]: any;
+};
+
+export type UrlList = string | Url[];
+
+export enum ModalIds {
+  InfinityComicWebModal = 'InfinityComicWebModal',
+  InfinityComicMobileModal = 'InfinityComicMobileModal',
+  AwesomeChatbotModal = 'AwesomeChatbotModal',
+}
 
 export enum DeviceTypes {
   android = 'Android',

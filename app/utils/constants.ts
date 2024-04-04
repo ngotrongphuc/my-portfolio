@@ -1,4 +1,4 @@
-import { Company, NavbarItem, Project, Skill } from './types';
+import { Company, ModalIds, NavbarItem, Project, Skill } from './types';
 
 const navbarItems: NavbarItem[] = [
   { name: 'About', href: '/#about' },
@@ -108,27 +108,42 @@ const projects: Project[] = [
     logo: 'infinity-comic.png',
     description:
       'A comic reader app for mobile, which has basic features made from my own experiences. Managed by an admin web',
-    url: {
-      web: 'https://infinity-comic.web.app/',
-      androidAndIos: {
+    url: [
+      {
+        type: 'web',
+        title: 'Website',
+        url: 'https://infinity-comic.web.app/',
+        modalId: ModalIds.InfinityComicWebModal,
+      },
+      {
+        type: 'mobile',
+        title: 'Android/IOS',
         url: 'https://expo.dev/preview/update?message=update%20expo%20sdk%20version%20to%2049&updateRuntimeVersion=1.0.0&createdAt=2024-04-04T17%3A45%3A39.179Z&scheme=exp&projectId=5d5007d4-d4f0-45da-af5b-c57e1235cc7f&group=c9ed96ec-3d4f-4677-baef-458728111b96',
         qrUrl:
           'https://qr.expo.dev/eas-update?appScheme=exp&projectId=5d5007d4-d4f0-45da-af5b-c57e1235cc7f&groupId=c9ed96ec-3d4f-4677-baef-458728111b96',
+        apkUrl:
+          'https://drive.google.com/file/d/1xtj_KcMCO9gRoNliNkeet2N4TTLOYNQr/view?usp=sharing',
+        modalId: ModalIds.InfinityComicMobileModal,
       },
-    },
+    ],
   },
   {
     name: 'Awesome Chatbot',
     logo: 'awesome-chatbot.png',
     description:
       'A mobile app for chatting with bots, which is a mini project of mine',
-    url: {
-      androidAndIos: {
+    url: [
+      {
+        type: 'mobile',
+        title: 'Android/IOS',
         url: 'https://expo.dev/preview/update?message=remove%20bot%20avatars%20in%20assets&updateRuntimeVersion=exposdk%3A50.0.0&createdAt=2024-04-04T14%3A41%3A57.877Z&scheme=exp&projectId=22d45950-a50e-481d-8477-eea11b0501c6&group=9da9ebda-4e51-4378-bdc1-e5cede0d39ab',
         qrUrl:
           'https://qr.expo.dev/eas-update?appScheme=exp&projectId=22d45950-a50e-481d-8477-eea11b0501c6&groupId=9da9ebda-4e51-4378-bdc1-e5cede0d39ab',
+        apkUrl:
+          'https://drive.google.com/file/d/1xv39CGYG19S81_c1VNHm2MKDrF3IS0tM/view?usp=sharing',
+        modalId: ModalIds.AwesomeChatbotModal,
       },
-    },
+    ],
   },
   {
     name: 'The Movie DB Website',
@@ -145,13 +160,13 @@ const contact = {
 };
 
 export {
-  navbarItems,
+  companies,
+  contact,
+  heroDescriptionText,
   heroHeadText,
   heroSubText,
-  heroDescriptionText,
-  skills,
   introduction,
-  companies,
+  navbarItems,
   projects,
-  contact,
+  skills,
 };

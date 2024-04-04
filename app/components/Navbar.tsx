@@ -1,13 +1,11 @@
 'use client';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import useWindowDimensions from '../hooks/useWindowDimensions';
-import debounce from 'lodash/debounce';
 import useNavbarVisible from '../hooks/useNavbarVisible';
 import { navbarItems } from '../utils/constants';
 import { NavbarItem } from '../utils/types';
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
 const Navbar = () => {
   const isNavbarVisible = useNavbarVisible();

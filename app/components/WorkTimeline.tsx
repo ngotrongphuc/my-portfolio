@@ -1,15 +1,14 @@
-import { SpeakerWaveIcon } from '@heroicons/react/24/outline';
+import { useInView } from 'framer-motion';
 import Image from 'next/image';
+import { useRef } from 'react';
 import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import { companies } from '../utils/constants';
-import TextWithLink from './TextWithLink';
-import { useInView } from 'framer-motion';
-import { useEffect, useMemo, useRef, useState } from 'react';
 import { Company } from '../utils/types';
+import TextWithLink from './TextWithLink';
 import UrlWrapper from './UrlWrapper';
 
 const WorkTimelineItem = ({
@@ -57,7 +56,7 @@ const WorkTimelineItem = ({
           )}
           {url && (
             <li>
-              <UrlWrapper>{url}</UrlWrapper>
+              <UrlWrapper name={name}>{url}</UrlWrapper>
             </li>
           )}
         </ul>

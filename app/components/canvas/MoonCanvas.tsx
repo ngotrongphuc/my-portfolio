@@ -1,7 +1,7 @@
+import { OrbitControls, Preload } from '@react-three/drei';
 import { Canvas, useLoader } from '@react-three/fiber';
+import { Suspense } from 'react';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
-import { Environment, OrbitControls, Preload } from '@react-three/drei';
-import { Suspense, useEffect, useState } from 'react';
 import CanvasLoader from '../CanvasLoader';
 
 const Moon = ({ isMobile = false }) => {

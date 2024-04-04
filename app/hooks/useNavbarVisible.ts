@@ -1,5 +1,5 @@
 import { debounce } from 'lodash';
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import useWindowDimensions from './useWindowDimensions';
 
 export default function useNavbarVisible() {

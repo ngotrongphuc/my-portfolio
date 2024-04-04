@@ -1,6 +1,6 @@
 import { CheckCircleIcon, XCircleIcon } from '@heroicons/react/24/outline';
-import styles from '../ui/styles';
 import { forwardRef, useEffect, useImperativeHandle, useState } from 'react';
+import styles from '../ui/styles';
 import { PopupPropsType, PopupRefType } from '../utils/types';
 
 const Popup = forwardRef<PopupRefType, PopupPropsType>(

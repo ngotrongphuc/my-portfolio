@@ -1,10 +1,8 @@
-import Image from 'next/image';
-import ComputerCanvas from './components/canvas/ComputerCanvas';
-import Hero from './components/sections/Hero';
 import About from './components/sections/About';
-import Work from './components/sections/Work';
 import Contact from './components/sections/Contact';
+import Hero from './components/sections/Hero';
 import Projects from './components/sections/Projects';
+import Work from './components/sections/Work';
 
 export default function Home() {
   return (
@@ -12,7 +10,7 @@ export default function Home() {
       <Hero />
       <About />
       <Work />
-      <Projects/>
+      <Projects />
       <Contact />
     </div>
   );

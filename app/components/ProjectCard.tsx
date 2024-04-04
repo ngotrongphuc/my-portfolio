@@ -1,7 +1,7 @@
 import Image from 'next/image';
-import { Company, Project } from '../utils/types';
-import TextWithLink from './TextWithLink';
 import styles from '../ui/styles';
+import { Project } from '../utils/types';
+import TextWithLink from './TextWithLink';
 import UrlWrapper from './UrlWrapper';
 
 const ProjectCard = ({ name, logo, description, url }: Project) => {
@@ -35,7 +35,7 @@ const ProjectCard = ({ name, logo, description, url }: Project) => {
         )}
         {url && (
           <li>
-            <UrlWrapper>{url}</UrlWrapper>
+            <UrlWrapper name={name}>{url}</UrlWrapper>
           </li>
         )}
       </ul>

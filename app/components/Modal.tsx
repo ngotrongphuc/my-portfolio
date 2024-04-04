@@ -1,10 +1,10 @@
+import { XMarkIcon } from '@heroicons/react/24/outline';
 import { forwardRef, useEffect, useImperativeHandle, useState } from 'react';
 import styles from '../ui/styles';
-import { XMarkIcon } from '@heroicons/react/24/outline';
 import { ModalPropsType, ModalRefType } from '../utils/types';
 
 const Modal = forwardRef<ModalRefType, ModalPropsType>(
-  ({visible=false, title='', children }, ref) => {
+  ({ visible = false, title = '', children }, ref) => {
     const [modalVisible, setModalVisible] = useState(visible);
 
     useEffect(() => {
@@ -15,11 +15,11 @@ const Modal = forwardRef<ModalRefType, ModalPropsType>(
       }
     }, [modalVisible]);
 
-    const show = ():void => {
+    const show = (): void => {
       setModalVisible(true);
     };
 
-    const hide = ():void => {
+    const hide = (): void => {
       setModalVisible(false);
     };
 

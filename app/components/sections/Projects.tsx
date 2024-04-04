@@ -1,9 +1,9 @@
 'use client';
 import SectionWrapper from '@/app/hoc/SectionWrapper';
 import styles from '@/app/ui/styles';
-import ProjectCard from '../ProjectCard';
 import { projects } from '@/app/utils/constants';
 import { Project } from '@/app/utils/types';
+import ProjectCard from '../ProjectCard';
 
 const Projects = () => {
   return (

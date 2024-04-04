@@ -1,16 +1,14 @@
 'use client';
 import SectionWrapper from '@/app/hoc/SectionWrapper';
-import SkillCard from '../SkillCard';
-import ComputerCanvas from '../canvas/ComputerCanvas';
-import MoonCanvas from '../canvas/MoonCanvas';
+import styles from '@/app/ui/styles';
 import { introduction, skills } from '@/app/utils/constants';
 import { ModalRefType, Skill } from '@/app/utils/types';
-import styles from '@/app/ui/styles';
+import { useRef } from 'react';
 import ElevatedButton from '../ElevatedButton';
-import { useRef, useState } from 'react';
-import Image from 'next/image';
-import PDFViewer from '../PDFViewer';
 import Modal from '../Modal';
+import PDFViewer from '../PDFViewer';
+import SkillCard from '../SkillCard';
+import ComputerCanvas from '../canvas/ComputerCanvas';
 
 const About = () => {
   const modalRef = useRef<ModalRefType>(null);
@@ -25,7 +23,9 @@ const About = () => {
       <p className={`${styles.sectionSubText} mb-10`}>{introduction}</p>
       <div className="flex flex-wrap flex-col xs:flex-row items-center xs:items-start space-y-8 xs:space-y-0 space-x-0 xs:space-x-8">
         <ElevatedButton onClick={showModal}>Preview My CV</ElevatedButton>
-        <ElevatedButton href='/my-cv.pdf' target='_blank'>Download My CV</ElevatedButton>
+        <ElevatedButton href="/my-cv.pdf" target="_blank">
+          Download My CV
+        </ElevatedButton>
       </div>
       <Modal ref={modalRef}>
         <PDFViewer />

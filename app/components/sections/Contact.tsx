@@ -1,19 +1,19 @@
 'use client';
 import SectionWrapper from '@/app/hoc/SectionWrapper';
 import styles from '@/app/ui/styles';
-import { useRef, useState } from 'react';
-import emailjs from '@emailjs/browser';
-import ElevatedButton from '../ElevatedButton';
-import EarthCanvas from '../canvas/EarthCanvas';
-import SpaceCanvas from '../canvas/SpaceCanvas';
 import { contact } from '@/app/utils/constants';
 import {
   emailPattern,
   phoneNumberPattern,
   regexToString,
 } from '@/app/utils/regexPatterns';
-import Popup from '../Popup';
 import { PopupRefType } from '@/app/utils/types';
+import emailjs from '@emailjs/browser';
+import { useRef, useState } from 'react';
+import ElevatedButton from '../ElevatedButton';
+import Popup from '../Popup';
+import EarthCanvas from '../canvas/EarthCanvas';
+import SpaceCanvas from '../canvas/SpaceCanvas';
 
 const Contact = () => {
   const formRef = useRef<any>();

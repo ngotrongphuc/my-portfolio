@@ -1,15 +1,11 @@
 'use client';
-import Image from 'next/image';
-import EarthCanvas from '../canvas/EarthCanvas';
-import ComputerCanvas from '../canvas/ComputerCanvas';
-import { useRef, useState } from 'react';
-import { SpeakerWaveIcon, SpeakerXMarkIcon } from '@heroicons/react/24/outline';
-import { Transition } from '@headlessui/react';
-import ElevatedButton from '../ElevatedButton';
-import MoonCanvas from '../canvas/MoonCanvas';
-import ScrollButton from '../ScrollButton';
 import styles from '@/app/ui/styles';
-import { heroSubText, heroDescriptionText } from '@/app/utils/constants';
+import { heroDescriptionText, heroSubText } from '@/app/utils/constants';
+import { SpeakerWaveIcon, SpeakerXMarkIcon } from '@heroicons/react/24/outline';
+import { useRef, useState } from 'react';
+import ElevatedButton from '../ElevatedButton';
+import ScrollButton from '../ScrollButton';
+import MoonCanvas from '../canvas/MoonCanvas';
 
 const Hero = () => {
   const backgroundAudioRef = useRef<HTMLAudioElement>(null);
@@ -49,9 +45,11 @@ const Hero = () => {
             Hi, I&apos;m <span className=" text-yellow-500">Phuc</span>
           </h1>
           <h2 className={styles.heroSubText}>{heroSubText}</h2>
-          <p className={`${styles.heroDescriptionText}`}>{heroDescriptionText}</p>
+          <p className={`${styles.heroDescriptionText}`}>
+            {heroDescriptionText}
+          </p>
           <div className="justify-center flex mt-10 xs:mt-20">
-            <ElevatedButton href='/#contact'>Contact me</ElevatedButton>
+            <ElevatedButton href="/#contact">Contact me</ElevatedButton>
           </div>
         </hgroup>
         <div className="flex justify-center p-6 pt-0 xs:pt-12 px-4 sm:px-8 md:px-10 lg:px-20">

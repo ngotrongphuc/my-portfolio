@@ -1,9 +1,8 @@
+import { OrbitControls, Preload } from '@react-three/drei';
 import { Canvas, useLoader } from '@react-three/fiber';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
-import { Environment, OrbitControls, Preload } from '@react-three/drei';
 import { Suspense } from 'react';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import CanvasLoader from '../CanvasLoader';
-import * as THREE from 'three'
 
 const Computer = ({ isMobile = false }) => {
   const computer = useLoader(GLTFLoader, '/computer-model/scene.gltf');
@@ -22,10 +21,7 @@ const Computer = ({ isMobile = false }) => {
 
 const ComputerCanvas = (props: any) => {
   return (
-    <div
-      {...props}
-      className={`${props.className} w-[99%] aspect-[2/1]`}
-    >
+    <div {...props} className={`${props.className} w-[99%] aspect-[2/1]`}>
       <Canvas
         frameloop="demand"
         camera={{
