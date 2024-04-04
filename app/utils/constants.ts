@@ -28,33 +28,33 @@ const skills: Skill[] = [
       'Skilled in CSS3, allow me to create stunning and responsive designs, enhance user experiences across various platforms. Familiar with Tailwind, Bootstrap and other UI libraries',
   },
   {
-    title: 'Javascript',
+    title: 'JavaScript',
     icon: 'javascript.svg',
     description:
       'Fluent in JavaScript, able to deal with complex algorithms, optimize functions to enhance performance and efficiency',
   },
   {
-    title: 'Typescript',
+    title: 'TypeScript',
     icon: 'typescript.svg',
     description:
       'Competent in TypeScript for building robust and type-safe applications with enhanced code readability and maintainability',
   },
   {
-    title: 'Reactjs',
+    title: 'ReactJS',
     icon: 'reactjs.svg',
     description:
-      'Specialize in Reactjs and React Native (Expo). Familiar with Redux Saga/Thunk, Redux Toolkit',
+      'Specialize in ReactJS and React Native (Expo). Familiar with Redux Saga/Thunk, Redux Toolkit',
   },
   {
-    title: 'Vuejs',
-    icon: 'vuejs.svg',
-    description: 'Experienced in Vuejs. Familiar with Vuetify, Vuex',
-  },
-  {
-    title: 'Nextjs',
+    title: 'NextJS',
     icon: 'nextjs.svg',
     description:
-      'Knowledgeable in SSR and CSR. Familiar with threejs, react-three-fiber, react-three/drei',
+      'Knowledgeable in SSR and CSR of NextJS. Familiar with threejs, react-three-fiber, react-three/drei',
+  },
+  {
+    title: 'VueJS',
+    icon: 'vuejs.svg',
+    description: 'Experienced in VueJS. Familiar with Vuetify, Vuex',
   },
   {
     title: 'Git',
@@ -70,7 +70,7 @@ const companies: Company[] = [
     position: 'Front-end developer',
     time: '9/2021 - 9/2022',
     description: [
-      'Developing and maintaining resource management web application using React.js and other related technologies.',
+      'Developing and maintaining resource management web application using React.js, React Native and other related technologies.',
       'Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.',
       'Implementing responsive design and ensuring cross-browser compatibility',
       'Participating in code reviews and providing constructive feedback to other developers.',
@@ -83,7 +83,7 @@ const companies: Company[] = [
     position: 'Front-end developer',
     time: '12/2022 - 8/2023',
     description: [
-      'Developing POS software for Japanese businesses using Vuejs and Electronjs and other related technologies.',
+      'Developing POS software for Japanese businesses using Vuejs, Electronjs and other related technologies.',
       'Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.',
       'Implementing responsive design and ensuring cross-browser compatibility',
       'Participating in improving and optimizing product performance',
@@ -116,18 +116,22 @@ const projects: Project[] = [
     description:
       'A mobile app for chatting with bots, which is a mini project of mine',
     url: {
-      android: {
-        url: 'exp://u.expo.dev/update/ca5252c1-b803-493d-937e-ecf50442e1f0',
-        qr: 'awesome-chatbot-android.svg',
-      },
-      ios: {
-        url: 'exp://u.expo.dev/update/fda0bf88-88a2-4e75-b08c-6ae6c56fa7d8',
-        qr: 'awesome-chatbot-ios.svg',
+      // android: {
+      //   url: 'exp://u.expo.dev/update/ca5252c1-b803-493d-937e-ecf50442e1f0',
+      //   qrUrl: 'awesome-chatbot-android.svg',
+      // },
+      // ios: {
+      //   url: 'exp://u.expo.dev/update/fda0bf88-88a2-4e75-b08c-6ae6c56fa7d8',
+      //   qrUrl: 'awesome-chatbot-ios.svg',
+      // },
+      androidAndIos: {
+        url: 'https://expo.dev/preview/update?message=remove%20bot%20avatars%20in%20assets&updateRuntimeVersion=exposdk%3A50.0.0&createdAt=2024-04-04T14%3A41%3A57.877Z&scheme=exp&projectId=22d45950-a50e-481d-8477-eea11b0501c6&group=9da9ebda-4e51-4378-bdc1-e5cede0d39ab',
+        qrUrl: 'https://qr.expo.dev/eas-update?appScheme=exp&projectId=22d45950-a50e-481d-8477-eea11b0501c6&groupId=9da9ebda-4e51-4378-bdc1-e5cede0d39ab',
       },
     },
   },
   {
-    name: 'The movie db website',
+    name: 'The Movie DB Website',
     logo: 'the-movie-db-website.svg',
     description:
       'A website to search and check information of movies. Data used from themoviedb api',

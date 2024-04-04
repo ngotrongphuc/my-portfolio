@@ -30,18 +30,23 @@ export type UrlType =
   | {
       android?: {
         url: string;
-        qr: string;
+        qrUrl: string;
       };
       ios?: {
         url: string;
-        qr: string;
+        qrUrl: string;
       };
+      androidAndIos?: {
+        url: string;
+        qrUrl: string;
+      }
       web?: string;
     };
 
 export enum DeviceTypes {
   android = 'Android',
   ios = 'IOS',
+  androidAndIos = 'Android/IOS',
   web = 'Web',
 }
 
