@@ -1,9 +1,9 @@
-'use client'
-import { skills } from '@/app/utils/constants';
-import SkillCard from '../SkillCard';
-import { Skill } from '@/app/utils/types';
-import styles from '@/app/ui/styles';
+'use client';
 import SectionWrapper from '@/app/hoc/SectionWrapper';
+import styles from '@/app/ui/styles';
+import { skills } from '@/app/utils/constants';
+import { Skill } from '@/app/utils/types';
+import SkillCard from '../SkillCard';
 
 const Skills = () => {
   return (
