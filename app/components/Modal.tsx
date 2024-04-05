@@ -32,7 +32,7 @@ const Modal = forwardRef<ModalRefType, ModalPropsType>(
       modalVisible && (
         <div className="w-full h-full fixed top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] z-50 flex flex-col justify-center items-center">
           <div
-            className={`${styles.styledCard} m-6 min-w-[300px] min-h-[300px] max-w-[1000px] max-h-[1000px] flex flex-col`}
+            className={`${styles.styledCard} m-6 min-w-[300px] min-h-[300px] flex flex-col`}
           >
             <XMarkIcon
               className="size-10 self-end cursor-pointer"

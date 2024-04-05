@@ -8,6 +8,7 @@ console.log(BASE_URL);
 
 const navbarItems: NavbarItem[] = [
   { name: 'About', href: '/#about' },
+  { name: 'Skills', href: '/#skills' },
   { name: 'Work', href: '/#work' },
   { name: 'Projects', href: '/#projects' },
   { name: 'Contact', href: '/#contact' },
@@ -19,6 +20,9 @@ const heroDescriptionText = `I like to craft solid and scalable front-end produc
 
 const introduction =
   "I'm a skilled front-end developer with experience in JavaScript and TypeScript, and expertise in frameworks like Reactjs, Nextjs, and Vuejs. I'm a quick learner and collaborate closely with clients to create efficient, scalable, and user-friendly solutions that solve real-world problems. Let's work together to bring your ideas to life!";
+
+const pdfUrl =
+  'https://drive.google.com/file/d/1HClxJIpkV8u_95v_pIb-T7bOx6bp35Cz';
 
 const skills: Skill[] = [
   {
@@ -173,6 +177,7 @@ export {
   heroHeadText,
   heroSubText,
   introduction,
+  pdfUrl,
   navbarItems,
   projects,
   skills,
