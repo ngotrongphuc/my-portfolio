@@ -1,5 +1,11 @@
 import { Company, ModalIds, NavbarItem, Project, Skill } from './types';
 
+const BASE_URL =
+  process.env.NODE_ENV === 'development'
+    ? `http://localhost:${process.env.PORT || 3000}`
+    : `https://${process.env.VERCEL_URL}`;
+console.log(BASE_URL);
+
 const navbarItems: NavbarItem[] = [
   { name: 'About', href: '/#about' },
   { name: 'Work', href: '/#work' },
@@ -160,6 +166,7 @@ const contact = {
 };
 
 export {
+  BASE_URL,
   companies,
   contact,
   heroDescriptionText,
