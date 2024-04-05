@@ -87,7 +87,7 @@ const Contact = () => {
 
   return (
     <section className="absolute inset-x-0 z-0">
-      <SpaceCanvas className="absolute inset-0 z-[-1] bg-gray-950 h-screen" />
+      <SpaceCanvas className="absolute inset-0 z-[-1] bg-gray-950 min-h-screen h-full" />
       <Popup ref={popupRef} />
       <div className={`${styles.sectionWrapper} flex flex-col`}>
         <h1 className={`${styles.sectionHeadText} mb-10`}>CONTACT</h1>
