@@ -117,7 +117,7 @@ const Contact = () => {
                 name="email"
                 value={form.email}
                 onChange={handleChange}
-                placeholder="What's your web address?"
+                placeholder="What's your email address?"
                 className="text-black py-4 px-6 rounded-lg font-medium"
                 required
                 pattern={regexToString(emailPattern)}
@@ -144,7 +144,7 @@ const Contact = () => {
                 name="message"
                 value={form.message}
                 onChange={handleChange}
-                placeholder="What you want to say?"
+                placeholder="What do you want to say?"
                 className="text-black py-4 px-6 rounded-lg font-medium"
                 required
               />
