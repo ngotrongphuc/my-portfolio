@@ -99,7 +99,7 @@ const Contact = () => {
             onSubmit={handleSubmit}
           >
             <label className="flex flex-col">
-              <span className="font-medium mb-3">Your Name</span>
+              <span className="font-medium mb-3">Your name</span>
               <input
                 type="text"
                 name="name"
@@ -138,7 +138,7 @@ const Contact = () => {
               />
             </label>
             <label className="flex flex-col">
-              <span className="font-medium mb-3">Your Message</span>
+              <span className="font-medium mb-3">Your message</span>
               <textarea
                 rows={7}
                 name="message"
