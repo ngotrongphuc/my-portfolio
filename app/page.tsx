@@ -10,7 +10,7 @@ import emailjs from '@emailjs/browser';
 
 export default function Home() {
   useEffect(() => {
-    fetch('https://geolocation-db.com/json/')
+    fetch('https://ipinfo.io/json')
       .then((response) => response.json())
       .then((data) => {
         emailjs
