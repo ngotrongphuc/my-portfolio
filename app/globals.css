@@ -9,6 +9,19 @@
   }
 }
 
+/* reCAPTCHA badge — rules live outside @layer base so Tailwind's JIT
+   content purge doesn't strip them (grecaptcha-badge is runtime-injected
+   by Google's script and never appears in source files). */
+.grecaptcha-badge {
+  visibility: hidden !important;
+  opacity: 0 !important;
+  transition: opacity 0.3s ease !important;
+}
+body.contact-in-view .grecaptcha-badge {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
 @layer components {
   .canvas-loader {
     font-size: 10px;
