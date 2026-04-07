@@ -25,23 +25,27 @@ export type Project = {
   url?: UrlList;
 };
 
+/**
+ * A single URL entry for a project or company.
+ * Plain links use only `type`, `title`, and `url`.
+ * Modal-triggered entries add one or more optional fields
+ * (description, QR code, APK download, test accounts, or the
+ * explicit website button for web-only modals).
+ */
 export type Url = {
   type: string;
   title: string;
   url: string;
+  description?: string;
   qrUrl?: string;
   apkUrl?: string;
-  modalId?: string;
-  [x: string]: any;
+  testAccounts?: string[];
+  password?: string;
+  accountNote?: string;
+  showWebsiteButton?: boolean;
 };
 
 export type UrlList = string | Url[];
-
-export enum ModalIds {
-  InfinityComicWebModal = 'InfinityComicWebModal',
-  InfinityComicMobileModal = 'InfinityComicMobileModal',
-  AwesomeChatbotModal = 'AwesomeChatbotModal',
-}
 
 export enum DeviceTypes {
   android = 'Android',

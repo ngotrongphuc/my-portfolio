@@ -1,4 +1,8 @@
-const styles = {
+/**
+ * Shared Tailwind class tokens reused across sections and cards.
+ * Kept as plain strings so they can be composed with `cn()`.
+ */
+export const styles = {
   heroHeadText:
     'font-bold leading-none text-[40px] xs:text-[50px] sm:text-[60px] md:text-[70px] lg:text-[80px]',
   heroSubText:
@@ -13,5 +17,3 @@ const styles = {
   sectionWrapper:
     'flex mx-auto p-6 max-w-full md:max-w-[95%] lg:max-w-[90%] xl:max-w-[85%] 2xl:max-w-7xl',
 };
-
-export default styles;
