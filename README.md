@@ -2,7 +2,7 @@
 
 A personal portfolio site built with Next.js 16 (App Router), TypeScript, Tailwind CSS, and React Three Fiber.
 
-Live: https://ngotrongphuc-portfolio.vercel.app
+Live: https://ngotrongphuc.vercel.app
 
 ## Tech stack
 
