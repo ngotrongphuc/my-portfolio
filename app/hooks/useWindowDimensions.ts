@@ -2,61 +2,53 @@
 import { useEffect, useState } from 'react';
 import { Breakpoints } from '../utils/types';
 
-function getWindowDimensions() {
+type WindowDimensions = {
+  width: number;
+  height: number;
+  isSm: boolean;
+  isMd: boolean;
+  isLg: boolean;
+  isXl: boolean;
+  is2Xl: boolean;
+};
+
+const emptyDimensions: WindowDimensions = {
+  width: 0,
+  height: 0,
+  isSm: false,
+  isMd: false,
+  isLg: false,
+  isXl: false,
+  is2Xl: false,
+};
+
+const getWindowDimensions = (): WindowDimensions => {
   const { innerWidth: width, innerHeight: height } = window;
-  let isSm = false,
-    isMd = false,
-    isLg = false,
-    isXl = false,
-    is2Xl = false;
-
-  if (width <= Breakpoints.sm) {
-    isSm = true;
-  } else if (width <= Breakpoints.md) {
-    isMd = true;
-  } else if (width <= Breakpoints.lg) {
-    isLg = true;
-  } else if (width <= Breakpoints.xl) {
-    isXl = true;
-  } else if (width <= Breakpoints['2xl']) {
-    is2Xl = true;
-  }
-
   return {
     width,
     height,
-    isSm,
-    isMd,
-    isLg,
-    isXl,
-    is2Xl,
+    isSm: width <= Breakpoints.sm,
+    isMd: width > Breakpoints.sm && width <= Breakpoints.md,
+    isLg: width > Breakpoints.md && width <= Breakpoints.lg,
+    isXl: width > Breakpoints.lg && width <= Breakpoints.xl,
+    is2Xl: width > Breakpoints.xl && width <= Breakpoints['2xl'],
   };
-}
+};
 
-export default function useWindowDimensions() {
-  // this will first run on server and thus doesn't have window object
-  const [windowDimensions, setWindowDimensions] = useState(
-    typeof window === 'undefined'
-      ? {
-          width: 0,
-          height: 0,
-          isSm: false,
-          isMd: false,
-          isLg: false,
-          isXl: false,
-          is2Xl: false,
-        }
-      : getWindowDimensions(),
+/**
+ * Reactive window size hook with Tailwind-aligned breakpoint flags.
+ * Returns an all-false snapshot on the server, then the real size on mount.
+ */
+export const useWindowDimensions = (): WindowDimensions => {
+  const [dimensions, setDimensions] = useState<WindowDimensions>(() =>
+    typeof window === 'undefined' ? emptyDimensions : getWindowDimensions(),
   );
 
   useEffect(() => {
-    function handleResize() {
-      setWindowDimensions(getWindowDimensions());
-    }
-
+    const handleResize = () => setDimensions(getWindowDimensions());
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  return windowDimensions;
-}
+  return dimensions;
+};

@@ -1,21 +1,21 @@
 'use client';
-import SectionWrapper from '@/app/hoc/SectionWrapper';
-import styles from '@/app/ui/styles';
-import { projects } from '@/app/utils/constants';
-import { Project } from '@/app/utils/types';
-import ProjectCard from '../ProjectCard';
+import { styles } from '../../ui/styles';
+import { cn } from '../../utils/cn';
+import { PROJECTS } from '../../utils/constants';
+import { ProjectCard } from '../ProjectCard';
+import { SectionWrapper } from '../SectionWrapper';
 
-const Projects = () => {
+export const Projects = () => {
   return (
-    <section>
-      <h1 className={`${styles.sectionHeadText} mb-10`}>PROJECTS</h1>
-      <div className="flex flex-wrap gap-10">
-        {projects.map((item: Project) => (
-          <ProjectCard {...item} key={item.name} />
-        ))}
-      </div>
-    </section>
+    <SectionWrapper id="projects">
+      <section>
+        <h1 className={cn(styles.sectionHeadText, 'mb-10')}>PROJECTS</h1>
+        <div className="flex flex-wrap gap-10">
+          {PROJECTS.map((item) => (
+            <ProjectCard {...item} key={item.name} />
+          ))}
+        </div>
+      </section>
+    </SectionWrapper>
   );
 };
-
-export default SectionWrapper(Projects, 'projects');

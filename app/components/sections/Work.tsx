@@ -1,16 +1,17 @@
 'use client';
-import SectionWrapper from '@/app/hoc/SectionWrapper';
-import styles from '@/app/ui/styles';
 import 'react-vertical-timeline-component/style.min.css';
-import WorkTimeline from '../WorkTimeline';
+import { styles } from '../../ui/styles';
+import { cn } from '../../utils/cn';
+import { SectionWrapper } from '../SectionWrapper';
+import { WorkTimeline } from '../WorkTimeline';
 
-const Work = () => {
+export const Work = () => {
   return (
-    <section>
-      <h1 className={`${styles.sectionHeadText} mb-10`}>WORK EXPERIENCE</h1>
-      <WorkTimeline />
-    </section>
+    <SectionWrapper id="work">
+      <section>
+        <h1 className={cn(styles.sectionHeadText, 'mb-10')}>WORK EXPERIENCE</h1>
+        <WorkTimeline />
+      </section>
+    </SectionWrapper>
   );
 };
-
-export default SectionWrapper(Work, 'work');

@@ -1,3 +1,4 @@
+'use client';
 import { useInView } from 'framer-motion';
 import Image from 'next/image';
 import { useRef } from 'react';
@@ -6,10 +7,13 @@ import {
   VerticalTimelineElement,
 } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
-import { companies } from '../utils/constants';
+import { COMPANIES } from '../utils/constants';
 import { Company } from '../utils/types';
-import TextWithLink from './TextWithLink';
-import UrlWrapper from './UrlWrapper';
+import { TextWithLink } from './TextWithLink';
+import { UrlWrapper } from './UrlWrapper';
+
+/** Props for `WorkTimelineItem`. Index is used as React key + a11y label. */
+type WorkTimelineItemProps = Company & { index: number };
 
 const WorkTimelineItem = ({
   name,
@@ -19,7 +23,7 @@ const WorkTimelineItem = ({
   description,
   url,
   index,
-}: Company & { index: number }) => {
+}: WorkTimelineItemProps) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.25 });
 
@@ -29,11 +33,16 @@ const WorkTimelineItem = ({
         visible={isInView}
         className="vertical-timeline-element--work"
         contentStyle={{ background: '#111827' }}
-        // contentArrowStyle={{ borderRight: '7px solid  #111827' }}
         date={time}
         iconClassName="flex justify-center items-center bg-white"
         icon={
-          <Image src={`/companies/${logo}`} alt={name} width={50} height={50} />
+          <Image
+            src={logo}
+            alt={name}
+            width={50}
+            height={50}
+            className="size-[50px]"
+          />
         }
       >
         <h3 className="vertical-timeline-element-title text-xl font-bold">
@@ -44,8 +53,8 @@ const WorkTimelineItem = ({
         </h4>
         <ul className="list-disc pt-5 pl-5 space-y-2">
           {Array.isArray(description) ? (
-            description.map((item, index) => (
-              <li key={index}>
+            description.map((item, idx) => (
+              <li key={idx}>
                 <TextWithLink>{item}</TextWithLink>
               </li>
             ))
@@ -65,14 +74,12 @@ const WorkTimelineItem = ({
   );
 };
 
-const WorkTimeline = () => {
+export const WorkTimeline = () => {
   return (
     <VerticalTimeline>
-      {companies.map((item, index) => (
+      {COMPANIES.map((item, index) => (
         <WorkTimelineItem {...item} index={index} key={index} />
       ))}
     </VerticalTimeline>
   );
 };
-
-export default WorkTimeline;

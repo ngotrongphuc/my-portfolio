@@ -1,10 +1,14 @@
+'use client';
 import { CheckCircleIcon, XCircleIcon } from '@heroicons/react/24/outline';
-import { forwardRef, useEffect, useImperativeHandle, useState } from 'react';
-import styles from '../ui/styles';
+import { forwardRef, useImperativeHandle, useState } from 'react';
+import { styles } from '../ui/styles';
+import { cn } from '../utils/cn';
 import { PopupPropsType, PopupRefType } from '../utils/types';
 
-const Popup = forwardRef<PopupRefType, PopupPropsType>(
+export const Popup = forwardRef<PopupRefType, PopupPropsType>(
   ({ type = 'success', title = '', content = '', visible = false }, ref) => {
+    // Props act as initial values only. The imperative ref API is the
+    // sole source of truth after mount.
     const [popupType, setPopupType] = useState<PopupPropsType['type']>(type);
     const [popupTitle, setPopupTitle] =
       useState<PopupPropsType['title']>(title);
@@ -13,66 +17,61 @@ const Popup = forwardRef<PopupRefType, PopupPropsType>(
     const [popupVisible, setPopupVisible] =
       useState<PopupPropsType['visible']>(visible);
 
-    useEffect(() => {
-      setPopupType(type);
-      setPopupTitle(title);
-      setPopupContent(content);
-      setPopupVisible(visible);
-    }, [type, title, content, visible]);
+    useImperativeHandle(ref, () => {
+      const showFor = (duration?: number) => {
+        setPopupVisible(true);
+        if (!duration) return;
+        const timer = setTimeout(() => setPopupVisible(false), duration);
+        return () => clearTimeout(timer);
+      };
 
-    useImperativeHandle(ref, () => ({
-      show(duration?: number): void {
-        setPopupVisible(true);
-        if (duration) {
-          setTimeout(() => {
-            setPopupVisible(false);
-          }, duration);
-        }
-      },
-      hide(): void {
-        setPopupVisible(false);
-      },
-      showSuccess(title: string, content: string, duration: number): void {
-        setPopupType('success');
-        setPopupTitle(title);
-        setPopupContent(content);
-        setPopupVisible(true);
-        if (duration) {
-          setTimeout(() => {
-            setPopupVisible(false);
-          }, duration);
-        }
-      },
-      showFailure(title: string, content: string, duration: number): void {
-        setPopupType('failure');
-        setPopupTitle(title);
-        setPopupContent(content);
-        setPopupVisible(true);
-        if (duration) {
-          setTimeout(() => {
-            setPopupVisible(false);
-          }, duration);
-        }
-      },
-    }));
+      return {
+        show: (duration?: number) => {
+          showFor(duration);
+        },
+        hide: () => setPopupVisible(false),
+        showSuccess: (
+          nextTitle: string,
+          nextContent: string,
+          duration?: number,
+        ) => {
+          setPopupType('success');
+          setPopupTitle(nextTitle);
+          setPopupContent(nextContent);
+          showFor(duration);
+        },
+        showFailure: (
+          nextTitle: string,
+          nextContent: string,
+          duration?: number,
+        ) => {
+          setPopupType('failure');
+          setPopupTitle(nextTitle);
+          setPopupContent(nextContent);
+          showFor(duration);
+        },
+      };
+    });
+
+    if (!popupVisible) return null;
 
     return (
-      popupVisible && (
-        <div
-          className={`${styles.styledCard} fixed top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] z-50 text-center flex flex-col justify-center items-center shadow-sm shadow-white`}
-        >
-          <h3 className="text-2xl mb-3">{popupTitle}</h3>
-          <p className="text-xl mb-6">{popupContent}</p>
-          {popupType === 'success' ? (
-            <CheckCircleIcon className="text-green-500 size-16" />
-          ) : (
-            <XCircleIcon className="text-red-500 size-16" />
-          )}
-        </div>
-      )
+      <div
+        className={cn(
+          styles.styledCard,
+          'fixed top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] z-50 text-center flex flex-col justify-center items-center shadow-sm shadow-white',
+        )}
+      >
+        <h3 className="text-2xl mb-3">{popupTitle}</h3>
+        <p className="text-xl mb-6">{popupContent}</p>
+        {popupType === 'success' ? (
+          <CheckCircleIcon className="text-green-500 size-16" />
+        ) : (
+          <XCircleIcon className="text-red-500 size-16" />
+        )}
+      </div>
     );
   },
 );
 
 Popup.displayName = 'Popup';
-export default Popup;

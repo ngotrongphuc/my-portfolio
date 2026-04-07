@@ -1,12 +1,16 @@
 import Link from 'next/link';
 import { urlPattern } from '../utils/regexPatterns';
 
-const TextWithLink = ({ children }: { children: React.ReactNode }) => {
+/**
+ * Renders a string with any URL tokens converted to external `Link`s.
+ * If `children` is not a string, it's returned untouched.
+ */
+export const TextWithLink = ({ children }: { children: React.ReactNode }) => {
   if (typeof children !== 'string') {
     return children;
   }
 
-  return children?.split(' ').map((word, index) => {
+  return children.split(' ').map((word, index) => {
     if (urlPattern.test(word)) {
       return (
         <Link
@@ -18,10 +22,7 @@ const TextWithLink = ({ children }: { children: React.ReactNode }) => {
           Website
         </Link>
       );
-    } else {
-      return <span key={index}>{word} </span>;
     }
+    return <span key={index}>{word} </span>;
   });
 };
-
-export default TextWithLink;

@@ -1,43 +1,40 @@
-import { debounce } from 'lodash';
-import { useEffect, useState } from 'react';
-import useWindowDimensions from './useWindowDimensions';
+'use client';
+import debounce from 'lodash/debounce';
+import { useEffect, useRef, useState } from 'react';
+import { useWindowDimensions } from './useWindowDimensions';
 
-export default function useNavbarVisible() {
+/**
+ * Tracks whether the top navbar should be visible based on scroll direction.
+ * Hides the navbar when scrolling down past one viewport height, shows it
+ * again on any upward scroll. Scroll handling is debounced at 100ms.
+ */
+export const useNavbarVisible = (): boolean => {
   const { height } = useWindowDimensions();
   const [isNavbarVisible, setIsNavbarVisible] = useState(true);
-  const [prevScrollPos, setPrevScrollPos] = useState(0);
-
-  const handleScroll = debounce(() => {
-    const currentScrollPos = window.scrollY;
-    const scrollThreshold = height - 1; // Adjust this value to your preferred threshold
-
-    // If the user has scrolled down beyond the threshold and the navbar is currently visible, hide it
-    if (
-      prevScrollPos < currentScrollPos &&
-      currentScrollPos > scrollThreshold &&
-      isNavbarVisible
-    ) {
-      setIsNavbarVisible(false);
-    }
-    // If the user has scrolled up or hasn't scrolled beyond the threshold and the navbar is hidden, show it
-    else if (
-      (prevScrollPos > currentScrollPos ||
-        currentScrollPos <= scrollThreshold) &&
-      !isNavbarVisible
-    ) {
-      setIsNavbarVisible(true);
-    }
-    // Update the previous scroll position
-    setPrevScrollPos(currentScrollPos);
-  }, 100);
+  const prevScrollPosRef = useRef(0);
 
   useEffect(() => {
-    handleScroll();
+    const threshold = height - 1;
+
+    const handleScroll = debounce(() => {
+      const currentScrollPos = window.scrollY;
+      const prev = prevScrollPosRef.current;
+
+      if (prev < currentScrollPos && currentScrollPos > threshold) {
+        setIsNavbarVisible(false);
+      } else if (prev > currentScrollPos || currentScrollPos <= threshold) {
+        setIsNavbarVisible(true);
+      }
+
+      prevScrollPosRef.current = currentScrollPos;
+    }, 100);
+
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      handleScroll.cancel();
     };
-  }, [prevScrollPos, isNavbarVisible]);
+  }, [height]);
 
   return isNavbarVisible;
-}
+};
