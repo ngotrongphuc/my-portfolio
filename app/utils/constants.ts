@@ -73,12 +73,12 @@ export const SKILLS: Skill[] = [
 /** Work history shown in the Work timeline. */
 export const COMPANIES: Company[] = [
   {
-    name: 'Zigvy Corporation',
-    logo: '/companies/zigvy.webp',
+    name: 'Orochi Network',
+    logo: '/companies/orochi.svg',
     position: 'Front-end developer',
-    time: '9/2021 - 9/2022',
+    time: '7/2024 - 4/2026',
     description:
-      'Developing and maintaining resource management web application using ReactJS, React Native, and other related technologies.',
+      'Developing landing pages, web apps, and dashboards across a Zero-Knowledge infrastructure ecosystem, delivering animation-rich experiences and Web3 applications with seamless on-chain interactions.',
   },
   {
     name: 'Rooxim Computer Science',
@@ -89,12 +89,12 @@ export const COMPANIES: Company[] = [
       'Developing POS software for Japanese businesses using VueJS, ElectronJS, and other related technologies. Integrating and implementing features for a Web3 project using NextJS.',
   },
   {
-    name: 'Orochi Network',
-    logo: '/companies/orochi.svg',
+    name: 'Zigvy Corporation',
+    logo: '/companies/zigvy.webp',
     position: 'Front-end developer',
-    time: '7/2024 - 4/2026',
+    time: '9/2021 - 9/2022',
     description:
-      'Developing landing pages, web apps, and dashboards across a Zero-Knowledge infrastructure ecosystem, delivering animation-rich experiences and Web3 applications with seamless on-chain interactions.',
+      'Developing and maintaining resource management web application using ReactJS, React Native, and other related technologies.',
   },
 ];
 
