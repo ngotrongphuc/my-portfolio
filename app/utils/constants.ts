@@ -104,6 +104,7 @@ export const PROJECTS: Project[] = [
     name: 'HR Octo Pro',
     logo: '/projects/hr-octo-pro.svg',
     description: 'A management web app for Human Resources',
+    url: 'https://www.hrforte.com/',
   },
   {
     name: 'TCG POS Siegfried',
@@ -111,10 +112,25 @@ export const PROJECTS: Project[] = [
     description: 'A desktop app for POS system of trading card game in Japan',
   },
   {
+    name: 'Super Vietnam',
+    logo: '/projects/super-vietnam.svg',
+    description:
+      'A landing page for Top Blockchain & AI Week 2025, organized by Orochi Network, DSAC, VnExpress, and FPT Online',
+    url: 'https://supervietnam.com/',
+  },
+  {
+    name: '@orochi-network/ui',
+    logo: '/companies/orochi.svg',
+    description:
+      'An internal React component library for Orochi Network',
+    url: 'https://main--6927c7e4da46cf459bc59a90.chromatic.com',
+  },
+  {
     name: 'TGE',
     logo: '/companies/orochi.svg',
     description:
       'A Web3 token distribution platform with on-chain vesting and claiming',
+    url: 'https://tge.orochi.network/',
   },
 ];
 
